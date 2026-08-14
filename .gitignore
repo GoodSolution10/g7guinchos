@@ -1,0 +1,12 @@
+# Segredos - NUNCA commitar
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials*.json
+secrets*
+# SO/editor
+.DS_Store
+Thumbs.db
+node_modules/
