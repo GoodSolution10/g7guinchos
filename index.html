@@ -3,246 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G7 Guinchos — Guincho 24h | Eficiência e Segurança em transporte de veículos</title>
-  <meta name="description" content="Guincho 24 horas, todos os dias. Remoção de veículos, motos, barcos e veículos pesados. Quase 20 anos de experiência. Chame agora pelo WhatsApp.">
+  <title>G7 Guinchos — Guincho 24h em SP | Chame pelo WhatsApp</title>
+  <meta name="description" content="Guincho 24 horas em São Paulo. Remoção de carros, motos, barcos e veículos pesados. Quase 20 anos de estrada. Atendimento imediato pelo WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --blue:#39b5ff; --blue-dark:#1e9de6; --ink:#12181d; --slate:#32373c;
-      --paper:#ffffff; --mist:#f2f6f9; --muted:#5b6670; --whats:#25d366; --whats-dark:#1eb956;
-      --radius:12px;
+      --blue:#39b5ff; --blue-deep:#0f77b8; --navy:#0e1b24; --navy-2:#15242f;
+      --bg:#ffffff; --bg-soft:#f2f7fa; --ink:#16232c; --muted:#54646f;
+      --line:#dde7ed; --whats:#1fb355; --whats-hover:#178f44;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
-    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
-    h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;line-height:1.12}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+    body{font-family:'Barlow',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    h1,h2,h3,.disp{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-    .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-family:'Archivo',sans-serif;border-radius:var(--radius);padding:16px 28px;font-size:1.05rem;min-height:56px;cursor:pointer;transition:background .2s,box-shadow .2s;border:0}
-    .btn svg{flex:none}
-    .btn-whats{background:var(--whats);color:#fff}
-    .btn-whats:hover{background:var(--whats-dark);box-shadow:0 8px 24px rgba(37,211,102,.35)}
-    .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
-    .btn-ghost:hover{background:rgba(255,255,255,.12)}
-    .btn-blue{background:var(--blue);color:#04222f}
-    .btn-blue:hover{background:var(--blue-dark);color:#fff}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--blue-deep);outline-offset:2px;border-radius:4px}
+    .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
 
-    /* Topbar */
-    .topbar{background:var(--ink);color:#cfd8df;font-size:.85rem;padding:8px 0}
-    .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .topbar a{color:var(--blue);font-weight:600}
-    nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #e3e9ee}
-    .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .nav-logo img{height:46px;width:auto}
-    .nav-links{display:flex;gap:26px;font-weight:500;color:var(--muted)}
-    .nav-links a:hover{color:var(--ink)}
-    .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--whats);color:#fff;font-weight:700;padding:10px 18px;border-radius:8px;font-size:.95rem}
-    .nav-cta:hover{background:var(--whats-dark)}
+    /* faixa zebrada (identidade guincho) */
+    .stripe{height:8px;background:repeating-linear-gradient(-45deg,var(--blue) 0 16px,var(--navy) 16px 32px)}
 
-    /* Hero */
-    .hero{position:relative;color:#fff;overflow:hidden;background:linear-gradient(115deg,#0c1318 0%,#16222b 55%,#0e2a3a 100%)}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(700px 340px at 85% 20%,rgba(57,181,255,.18),transparent 70%)}
-    .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:72px}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(57,181,255,.14);border:1px solid rgba(57,181,255,.4);color:var(--blue);font-weight:600;font-size:.85rem;padding:7px 14px;border-radius:999px;margin-bottom:22px}
-    .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--whats);animation:pulse 1.6s infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-    .hero h1{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:900;text-transform:uppercase}
-    .hero h1 .blue{color:var(--blue)}
-    .hero p.lead{color:#b9c6d0;font-size:1.15rem;margin:18px 0 30px;max-width:48ch}
-    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-    .hero-note{margin-top:18px;color:#8fa2b0;font-size:.9rem}
-    .hero-img{position:relative}
-    .hero-img img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.45)}
-    .hero-img .tag{position:absolute;left:-14px;bottom:18px;background:var(--blue);color:#04222f;font-family:'Archivo';font-weight:900;padding:10px 18px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    /* topo utilitário */
+    .util{background:var(--navy);color:#c8d6df;font-size:.9rem}
+    .util .wrap{display:flex;justify-content:space-between;align-items:center;min-height:38px;gap:10px;flex-wrap:wrap}
+    .util strong{color:#fff;font-weight:600}
+    .util a{color:var(--blue);font-weight:700}
+    .util a:hover{text-decoration:underline}
 
-    /* Sections */
-    section{padding:78px 0}
-    .kicker{color:var(--blue-dark);font-family:'Archivo';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
-    .sec-title{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:900;margin:8px 0 12px}
-    .sec-lead{color:var(--muted);max-width:58ch}
-    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;margin-top:42px}
-    .card{background:var(--paper);border:1px solid #e3e9ee;border-radius:var(--radius);padding:30px;transition:box-shadow .2s,border-color .2s}
-    .card:hover{box-shadow:0 14px 34px rgba(18,24,29,.09);border-color:#cfe6f5}
-    .card .ic{width:52px;height:52px;border-radius:10px;background:#e7f5ff;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-    .card .ic svg{stroke:var(--blue-dark)}
-    .card h3{font-size:1.12rem;margin-bottom:8px}
-    .card p{color:var(--muted);font-size:.95rem}
-    .alt{background:var(--mist)}
+    nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:52px;width:auto}
+    .menu{display:flex;gap:28px;font-weight:600;color:var(--muted);font-size:1rem}
+    .menu a{padding:8px 2px;cursor:pointer}
+    .menu a:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;border-radius:8px;cursor:pointer;transition:background .2s,transform .15s;min-height:52px;padding:14px 26px;font-size:1.05rem;border:0}
+    .btn-w{background:var(--whats);color:#fff}
+    .btn-w:hover{background:var(--whats-hover)}
+    .btn-o{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+    .btn-o:hover{background:var(--navy);color:#fff}
+    .btn-n{background:var(--navy);color:#fff}
+    .btn-n:hover{background:var(--navy-2)}
 
-    /* Quem somos */
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    .about img{border-radius:var(--radius);box-shadow:0 18px 44px rgba(18,24,29,.16)}
-    .stats{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap}
-    .stat b{display:block;font-family:'Archivo';font-weight:900;font-size:1.9rem;color:var(--blue-dark)}
-    .stat span{color:var(--muted);font-size:.9rem}
-    .about ul{list-style:none;margin-top:22px;display:grid;gap:14px}
-    .about li{display:flex;gap:12px;align-items:flex-start;color:var(--slate)}
-    .about li svg{flex:none;margin-top:3px;stroke:var(--whats-dark)}
+    /* HERO claro */
+    .hero{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:0}
+    .hero h1{font-size:clamp(2.6rem,6vw,4.3rem);font-weight:800;color:var(--navy)}
+    .hero h1 span{color:var(--blue-deep)}
+    .hero .sub{font-size:1.2rem;color:var(--muted);margin:18px 0 26px;max-width:46ch}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:var(--ink)}
+    .chip svg{stroke:var(--blue-deep);flex:none}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+    .hero-fig{align-self:end;position:relative}
+    .hero-fig img{margin-bottom:-6px;filter:drop-shadow(0 18px 30px rgba(14,27,36,.18))}
 
-    /* Contato */
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:42px}
-    .contact-grid .card a{color:var(--blue-dark);font-weight:600}
-    .contact-grid .card a:hover{text-decoration:underline}
+    /* faixa de emergência */
+    .sos{background:var(--navy);color:#fff}
+    .sos .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+    .sos h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700}
+    .sos h2 em{color:var(--blue);font-style:normal}
+    .sos-b{display:flex;gap:12px;flex-wrap:wrap}
+    .sos .tel{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff}
+    .sos .tel:hover{background:rgba(255,255,255,.12)}
 
-    /* CTA final */
-    .cta-final{background:linear-gradient(115deg,#0c1318,#123143);color:#fff;text-align:center}
-    .cta-final h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;text-transform:uppercase}
-    .cta-final p{color:#b9c6d0;margin:14px auto 30px;max-width:52ch}
+    section{padding:84px 0}
+    .kick{display:inline-block;font-family:'Barlow Condensed';text-transform:uppercase;font-weight:700;letter-spacing:.14em;color:var(--blue-deep);border-left:4px solid var(--blue);padding-left:10px;margin-bottom:12px}
+    .title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;color:var(--navy);margin-bottom:10px}
+    .lead{color:var(--muted);max-width:60ch;font-size:1.08rem}
 
-    footer{background:var(--ink);color:#8fa2b0;padding:36px 0;font-size:.88rem}
-    footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+    /* serviços em linhas */
+    .srv{margin-top:44px;border-top:1px solid var(--line)}
+    .row{display:grid;grid-template-columns:110px 1fr auto;gap:22px;align-items:center;padding:30px 6px;border-bottom:1px solid var(--line);transition:background .2s}
+    .row:hover{background:var(--bg-soft)}
+    .row .num{font-family:'Barlow Condensed';font-weight:800;font-size:2.6rem;color:var(--blue);line-height:1}
+    .row h3{font-size:1.5rem;color:var(--navy);margin-bottom:6px}
+    .row p{color:var(--muted);max-width:60ch}
+    .row .go{color:var(--whats);font-weight:700;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 4px}
+    .row .go:hover{text-decoration:underline}
+
+    /* como funciona */
+    .steps-bg{background:var(--bg-soft)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px;position:relative}
+    .step .n{position:absolute;top:-18px;left:24px;background:var(--navy);color:var(--blue);font-family:'Barlow Condensed';font-weight:800;font-size:1.3rem;padding:5px 14px;border-radius:6px}
+    .step h3{font-size:1.35rem;color:var(--navy);margin:12px 0 8px}
+    .step p{color:var(--muted)}
+
+    /* quem somos */
+    .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .frame{position:relative;padding:0 22px 22px 0}
+    .frame::after{content:"";position:absolute;right:0;bottom:0;width:78%;height:78%;background:repeating-linear-gradient(-45deg,var(--blue) 0 14px,transparent 14px 28px);border-radius:12px;z-index:0;opacity:.5}
+    .frame img{position:relative;z-index:1;border-radius:12px;background:#fff;border:1px solid var(--line)}
+    .marks{list-style:none;margin:24px 0;display:grid;gap:14px}
+    .marks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+    .marks svg{flex:none;margin-top:4px;stroke:var(--whats)}
+    .nums{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:28px}
+    .nums div{flex:1;text-align:center;padding:18px 10px;background:#fff}
+    .nums div+div{border-left:1px solid var(--line)}
+    .nums b{display:block;font-family:'Barlow Condensed';font-weight:800;font-size:2rem;color:var(--blue-deep)}
+    .nums span{color:var(--muted);font-size:.88rem}
+
+    /* contatos */
+    .contact{background:var(--navy);color:#fff}
+    .contact .title{color:#fff}
+    .contact .lead{color:#a7bac6}
+    .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:44px}
+    .cbox{background:var(--navy-2);border:1px solid #24394a;border-radius:12px;padding:26px}
+    .cbox .ic{width:46px;height:46px;border-radius:9px;background:rgba(57,181,255,.14);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .cbox .ic svg{stroke:var(--blue)}
+    .cbox h3{font-size:1.2rem;margin-bottom:8px}
+    .cbox a{color:var(--blue);font-weight:600;display:inline-block;padding:4px 0;min-height:32px}
+    .cbox a:hover{text-decoration:underline}
+    .cbox p{color:#a7bac6;font-size:.95rem}
+
+    footer{background:var(--navy);border-top:1px solid #24394a;color:#7f96a4;padding:26px 0 96px;font-size:.9rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     footer a{color:var(--blue)}
 
-    /* WhatsApp flutuante */
-    .float-whats{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--whats);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .2s}
-    .float-whats:hover{transform:translateY(-3px)}
+    /* flutuante + barra mobile */
+    .fab{position:fixed;right:16px;bottom:88px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--whats);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(31,179,85,.45);cursor:pointer;transition:transform .15s}
+    .fab:hover{transform:translateY(-3px)}
+    .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+    .dock a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;font-weight:700;font-size:1.05rem}
+    .dock .d-tel{background:var(--navy);color:#fff}
+    .dock .d-wa{background:var(--whats);color:#fff}
 
-    @media (max-width:860px){
-      .nav-links{display:none}
-      .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:52px}
-      .hero-img .tag{left:10px}
-      .about{grid-template-columns:1fr}
+    @media (max-width:900px){
+      .menu{display:none}
+      .hero .wrap{grid-template-columns:1fr;padding-top:40px}
+      .hero-fig{order:-1}
+      .hero-fig img{max-width:78%;margin:0 auto -6px}
+      .steps{grid-template-columns:1fr}
+      .about .wrap{grid-template-columns:1fr}
+      .row{grid-template-columns:64px 1fr}
+      .row .num{font-size:2rem}
+      .row .go{grid-column:2}
+      .dock{display:grid}
+      .fab{bottom:76px}
+      footer{padding-bottom:120px}
     }
   </style>
 </head>
 <body>
 
-<div class="topbar"><div class="wrap">
-  <span>Atendimento 24h · todos os dias</span>
-  <span>Emergência? <a href="tel:+5511951251014">Ligue agora: (11) 95125-1014</a></span>
+<div class="util"><div class="wrap">
+  <span><strong>G7 Guinchos</strong> · São Paulo e região</span>
+  <span>Emergência 24h: <a href="tel:+5511951251014">(11) 95125-1014</a></span>
 </div></div>
+<div class="stripe" aria-hidden="true"></div>
 
 <nav><div class="wrap nav-in">
-  <a class="nav-logo" href="#inicio" aria-label="G7 Guinchos — início">
-    <img src="assets/web-logo-g7-guinchos-01.webp" alt="Logotipo G7 Guinchos" height="46">
+  <a class="brand" href="#inicio" aria-label="G7 Guinchos — início">
+    <img src="assets/web-logo-g7-guinchos-01.webp" alt="Logotipo G7 Guinchos">
   </a>
-  <div class="nav-links">
+  <div class="menu">
     <a href="#servicos">Serviços</a>
-    <a href="#quem-somos">Quem Somos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#quem-somos">Quem somos</a>
     <a href="#contatos">Contatos</a>
   </div>
-  <a class="nav-cta" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
-    Chamar guincho
+  <a class="btn btn-w" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
+    WhatsApp
   </a>
 </div></nav>
 
 <header class="hero" id="inicio"><div class="wrap">
   <div>
-    <span class="hero-badge"><span class="dot"></span> Equipe disponível agora</span>
-    <h1>Te atender é a <span class="blue">nossa missão!</span></h1>
-    <p class="lead">Eficiência e segurança em transporte de veículos. Guincho 24 horas para carros, motos, barcos e veículos pesados — em minutos, direto pelo WhatsApp.</p>
+    <h1>Guincho <span>24 horas</span>.<br>Chegamos até você.</h1>
+    <p class="sub">Carro quebrou? Moto parou? A G7 remove carros, motos, barcos e veículos pesados com segurança — todos os dias, a qualquer hora, em São Paulo e região.</p>
+    <div class="chips">
+      <span class="chip"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Atendimento imediato</span>
+      <span class="chip"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Quase 20 anos de estrada</span>
+      <span class="chip"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg> Frota própria revisada</span>
+    </div>
     <div class="hero-ctas">
-      <a class="btn btn-whats" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+      <a class="btn btn-w" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
         Chamar guincho agora
       </a>
-      <a class="btn btn-ghost" href="tel:+5511951251014">
+      <a class="btn btn-o" href="tel:+5511951251014">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (11) 95125-1014
+        Ligar agora
       </a>
     </div>
-    <p class="hero-note">Resposta em poucos minutos · Sem cadastro, sem formulário</p>
   </div>
-  <div class="hero-img">
-    <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Caminhão guincho da G7 transportando um veículo" width="1024" height="736">
-    <span class="tag">24H · TODOS OS DIAS</span>
-  </div>
+  <figure class="hero-fig">
+    <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Caminhão guincho plataforma da G7" width="1024" height="736" fetchpriority="high">
+  </figure>
 </div></header>
+<div class="stripe" aria-hidden="true"></div>
+
+<div class="sos"><div class="wrap">
+  <h2>Na estrada agora? <em>Manda um "Preciso de atendimento"</em></h2>
+  <div class="sos-b">
+    <a class="btn btn-w" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">WhatsApp (11) 95125-1014</a>
+    <a class="btn tel" href="tel:+551150439790">Fixo (11) 5043-9790</a>
+  </div>
+</div></div>
 
 <section id="servicos"><div class="wrap">
-  <span class="kicker">Serviços</span>
-  <h2 class="sec-title">O que a G7 pode fazer por você</h2>
-  <p class="sec-lead">Do carro de passeio ao veículo pesado: chegamos até você com o equipamento certo.</p>
-  <div class="grid3">
-    <div class="card">
-      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></div>
-      <h3>Remoção de veículos</h3>
-      <p>Carros, motos, barcos e veículos pesados. Transporte com total segurança e equipamento adequado pra cada tipo de remoção.</p>
+  <span class="kick">Serviços</span>
+  <h2 class="title">O que a G7 resolve por você</h2>
+  <p class="lead">Equipamento certo pra cada situação — do carro de passeio ao veículo pesado.</p>
+  <div class="srv">
+    <div class="row">
+      <span class="num">01</span>
+      <div>
+        <h3>Remoção de veículos</h3>
+        <p>Carros, motos, barcos e veículos pesados transportados com total segurança, no equipamento adequado.</p>
+      </div>
+      <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">Solicitar
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
-    <div class="card">
-      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <h3>Atendimento 24h / 7 dias</h3>
-      <p>Emergência não tem hora. Nossa equipe atende de madrugada, feriado e fim de semana — o ano inteiro.</p>
+    <div class="row">
+      <span class="num">02</span>
+      <div>
+        <h3>Socorro 24h, todos os dias</h3>
+        <p>Emergência não escolhe hora: atendemos madrugada, feriado e fim de semana — o ano inteiro.</p>
+      </div>
+      <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">Solicitar
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
-    <div class="card">
-      <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <h3>Agendamento de reboques</h3>
-      <p>Precisa transportar um veículo em data marcada? Agende pelo WhatsApp e a gente cuida de tudo no horário combinado.</p>
+    <div class="row">
+      <span class="num">03</span>
+      <div>
+        <h3>Reboque agendado</h3>
+        <p>Transporte em data e horário marcados: combina pelo WhatsApp e a G7 chega na hora certa.</p>
+      </div>
+      <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">Agendar
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </div></section>
 
-<section class="alt" id="quem-somos"><div class="wrap about">
+<section class="steps-bg" id="como-funciona"><div class="wrap">
+  <span class="kick">Como funciona</span>
+  <h2 class="title">Socorro em 3 passos</h2>
+  <div class="steps">
+    <div class="step"><span class="n">1</span>
+      <h3>Você chama</h3>
+      <p>Manda mensagem no WhatsApp ou liga. Sem formulário, sem cadastro, sem espera.</p>
+    </div>
+    <div class="step"><span class="n">2</span>
+      <h3>A gente localiza</h3>
+      <p>Você informa onde está e o que aconteceu. Já saímos com o guincho certo pro seu caso.</p>
+    </div>
+    <div class="step"><span class="n">3</span>
+      <h3>Veículo em segurança</h3>
+      <p>Motorista experiente remove e leva seu veículo até o destino, com todo o cuidado.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="about" id="quem-somos"><div class="wrap">
+  <div class="frame">
+    <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Guincho plataforma da frota G7" width="1024" height="736" loading="lazy">
+  </div>
   <div>
-    <span class="kicker">Quem somos</span>
-    <h2 class="sec-title">Quase 20 anos levando seu veículo em segurança</h2>
-    <p class="sec-lead">A G7 Guinchos atua no transporte de veículos com uma missão simples: te atender bem, na hora que você mais precisa.</p>
-    <ul>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Motoristas altamente capacitados, prontos 24 horas por dia</li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Frota revisada periodicamente — serviço sempre impecável</li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Segurança e qualidade em cada transporte</li>
+    <span class="kick">Quem somos</span>
+    <h2 class="title">Quase 20 anos de estrada</h2>
+    <p class="lead">A G7 Guinchos nasceu com uma missão simples: te atender bem na hora em que você mais precisa. É isso que fazemos todos os dias, há quase duas décadas.</p>
+    <ul class="marks">
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Motoristas capacitados e experientes</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Frota própria com revisão periódica</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Transporte com segurança, do início ao fim</li>
     </ul>
-    <div class="stats">
-      <div class="stat"><b>20 anos</b><span>de estrada</span></div>
-      <div class="stat"><b>24h</b><span>todos os dias</span></div>
-      <div class="stat"><b>SP</b><span>e região</span></div>
+    <div class="nums">
+      <div><b>20</b><span>anos de experiência</span></div>
+      <div><b>24h</b><span>todos os dias</span></div>
+      <div><b>SP</b><span>e região</span></div>
     </div>
   </div>
-  <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Guincho plataforma da G7 em operação" width="1024" height="736" loading="lazy">
 </div></section>
 
-<section id="contatos"><div class="wrap">
-  <span class="kicker">Contatos</span>
-  <h2 class="sec-title">Fale com a G7</h2>
-  <p class="sec-lead">Atendimento todos os dias, 24h. Escolha o canal mais fácil pra você:</p>
-  <div class="contact-grid">
-    <div class="card">
-      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+<section class="contact" id="contatos"><div class="wrap">
+  <span class="kick">Contatos</span>
+  <h2 class="title">Fale com a G7</h2>
+  <p class="lead">Todos os dias, 24 horas. Escolhe o canal mais fácil pra você.</p>
+  <div class="cgrid">
+    <div class="cbox">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
       <h3>WhatsApp</h3>
-      <p><a href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 95125-1014</a><br>
-      <a href="https://api.whatsapp.com/send?phone=5511971766491&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 97176-6491</a></p>
+      <a href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 95125-1014</a><br>
+      <a href="https://api.whatsapp.com/send?phone=5511971766491&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 97176-6491</a>
     </div>
-    <div class="card">
-      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-      <h3>Telefone</h3>
-      <p><a href="tel:+551150439790">(11) 5043-9790</a><br>
-      <a href="tel:+5511975308004">(11) 97530-8004</a></p>
+    <div class="cbox">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <h3>Telefones</h3>
+      <a href="tel:+551150439790">(11) 5043-9790</a><br>
+      <a href="tel:+5511975308004">(11) 97530-8004</a>
     </div>
-    <div class="card">
-      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+    <div class="cbox">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
       <h3>E-mail</h3>
-      <p><a href="mailto:g7guinchosadm@gmail.com">g7guinchosadm@gmail.com</a></p>
+      <a href="mailto:g7guinchosadm@gmail.com">g7guinchosadm@gmail.com</a>
+      <p>Pra orçamentos e parcerias</p>
     </div>
-    <div class="card">
-      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    <div class="cbox">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
       <h3>Instagram</h3>
-      <p><a href="https://www.instagram.com/g7_guinchos2/" target="_blank" rel="noopener">@g7_guinchos2</a></p>
+      <a href="https://www.instagram.com/g7_guinchos2/" target="_blank" rel="noopener">@g7_guinchos2</a>
+      <p>Acompanhe nosso trabalho</p>
     </div>
   </div>
-</div></section>
-
-<section class="cta-final"><div class="wrap">
-  <h2>Precisando de guincho agora?</h2>
-  <p>Manda um "Preciso de atendimento" no WhatsApp e nossa equipe já começa o seu socorro.</p>
-  <a class="btn btn-whats" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
-    Chamar guincho no WhatsApp
-  </a>
 </div></section>
 
 <footer><div class="wrap">
-  <span>© 2026 G7 Guinchos. Todos os direitos reservados.</span>
-  <span>Atendimento 24h · <a href="https://www.instagram.com/g7_guinchos2/" target="_blank" rel="noopener">Instagram</a> · <a href="mailto:g7guinchosadm@gmail.com">E-mail</a></span>
+  <span>© 2026 G7 Guinchos — Todos os direitos reservados.</span>
+  <span>Atendimento 24h, todos os dias · <a href="https://www.instagram.com/g7_guinchos2/" target="_blank" rel="noopener">Instagram</a></span>
 </div></footer>
 
-<a class="float-whats" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener" aria-label="Chamar guincho pelo WhatsApp">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
+<a class="fab" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener" aria-label="Chamar guincho pelo WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
 </a>
+
+<div class="dock" role="navigation" aria-label="Ações rápidas">
+  <a class="d-tel" href="tel:+5511951251014">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Ligar agora
+  </a>
+  <a class="d-wa" href="https://api.whatsapp.com/send?phone=5511951251014&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
+    WhatsApp
+  </a>
+</div>
 
 </body>
 </html>
