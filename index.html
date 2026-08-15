@@ -59,8 +59,9 @@
     .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:var(--ink)}
     .chip svg{stroke:var(--blue-deep);flex:none}
     .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-    .hero-fig{align-self:end;position:relative}
-    .hero-fig img{margin-bottom:-6px;filter:drop-shadow(0 18px 30px rgba(14,27,36,.18))}
+    .hero-fig{align-self:center;position:relative;padding-bottom:34px}
+    .hero-fig img{filter:drop-shadow(0 26px 20px rgba(14,27,36,.28))}
+    .hero-fig::after{content:"";position:absolute;left:8%;right:8%;bottom:16px;height:26px;background:radial-gradient(ellipse at center,rgba(14,27,36,.22),transparent 70%);z-index:-1}
 
     /* faixa de emergência */
     .sos{background:var(--navy);color:#fff}
@@ -98,7 +99,7 @@
     .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
     .frame{position:relative;padding:0 22px 22px 0}
     .frame::after{content:"";position:absolute;right:0;bottom:0;width:78%;height:78%;background:repeating-linear-gradient(-45deg,var(--blue) 0 14px,transparent 14px 28px);border-radius:12px;z-index:0;opacity:.5}
-    .frame img{position:relative;z-index:1;border-radius:12px;background:#fff;border:1px solid var(--line)}
+    .frame img{position:relative;z-index:1;border-radius:12px;background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);border:1px solid var(--line);padding:26px}
     .marks{list-style:none;margin:24px 0;display:grid;gap:14px}
     .marks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
     .marks svg{flex:none;margin-top:4px;stroke:var(--whats)}
@@ -194,7 +195,7 @@
     </div>
   </div>
   <figure class="hero-fig">
-    <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Caminhão guincho plataforma da G7" width="1024" height="736" fetchpriority="high">
+    <img src="assets/caminhao-g7.png" alt="Caminhão guincho plataforma da G7" width="1024" height="736" fetchpriority="high">
   </figure>
 </div></header>
 <div class="stripe" aria-hidden="true"></div>
@@ -263,7 +264,7 @@
 
 <section class="about" id="quem-somos"><div class="wrap">
   <div class="frame">
-    <img src="assets/web__caminhao_guincho-002-1024x736.webp" alt="Guincho plataforma da frota G7" width="1024" height="736" loading="lazy">
+    <img src="assets/caminhao-g7.png" alt="Guincho plataforma da frota G7" width="1024" height="736" loading="lazy">
   </div>
   <div>
     <span class="kick">Quem somos</span>
