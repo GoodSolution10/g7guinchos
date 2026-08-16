@@ -10,3 +10,6 @@ secrets*
 .DS_Store
 Thumbs.db
 node_modules/
+.playwright-mcp/
+# png de site liberado em assets/
+!assets/*.png
