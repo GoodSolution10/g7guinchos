@@ -220,9 +220,6 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .gal figure:hover{box-shadow:var(--shadow-2);transform:translateY(-4px)}
     .gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
     .gal figure:hover img{transform:scale(1.05)}
-    /* recorte transparente (caminhao com a marca): contain sobre degrade, cover decapitaria a cabine */
-    .gal figure.cut{background:linear-gradient(180deg,var(--surface) 0%,var(--brand-tint) 100%)}
-    .gal .cut img{object-fit:contain;padding:14px 14px 34px}
     .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:38px 16px 14px;color:#fff;font-weight:600;font-size:.95rem;
       background:linear-gradient(180deg,transparent 0%,rgba(8,14,19,.78) 100%)}
 
@@ -552,10 +549,6 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     <figure>
       <img src="assets/frota-hrv.webp" alt="Honda HR-V na plataforma da G7" width="1280" height="720" loading="lazy">
       <figcaption>Plataforma para leves</figcaption>
-    </figure>
-    <figure class="cut">
-      <img src="assets/frota-vw-g7.webp" alt="Caminhão plataforma da G7 Guinchos com a marca na porta — VW Delivery 9.170" width="1181" height="853" loading="lazy">
-      <figcaption>Plataforma VW Delivery — frota G7</figcaption>
     </figure>
   </div>
 </div></section>
