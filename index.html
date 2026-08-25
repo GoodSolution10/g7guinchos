@@ -115,6 +115,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .rail-plan li svg{flex:none;margin-top:4px;stroke:var(--ok)}
     .rail-plan .ph{border-radius:11px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/5;background:var(--surface-2)}
     .rail-plan .ph img{width:100%;height:100%;object-fit:cover}
+    /* recorte transparente (caminhao com a marca): contain sobre degrade, cover decapitaria a cabine */
+    .rail-plan .ph.cut{aspect-ratio:16/8;background:linear-gradient(180deg,var(--surface) 0%,var(--brand-tint) 100%)}
+    .rail-plan .ph.cut img{object-fit:contain;padding:10px 16px}
     .rail-plan .ctas{display:flex;gap:12px;flex-wrap:wrap}
 
     /* carrossel de prestadoras dentro do hero (pedido 24/08) */
@@ -276,96 +279,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       .fab{display:none}
       footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
       .alert .wrap{justify-content:center;gap:14px}
+      .nav-in>.btn-wa{display:none}   /* mobile: whatsapp so na dock (pedido 25/08) */
     }
     @media (max-width:400px){ .stat b{font-size:2.1rem} .wrap{padding:0 18px} }
 
-    /* ---------- modal do agente (idêntico ao v5) ---------- */
-    .chat-fab{position:fixed;right:16px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:var(--z-fab);
-      display:flex;align-items:center;gap:10px;height:58px;padding:0 22px 0 18px;border:0;border-radius:999px;
-      background:var(--brand);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;
-      text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;cursor:pointer;
-      box-shadow:0 12px 30px rgba(15,119,184,.38);transition:transform .18s,background .18s}
-    .chat-fab:hover{transform:translateY(-3px);background:#0C639A}
-    .chat-fab[aria-expanded="true"]{display:none}
-    .chat-scrim{position:fixed;inset:0;z-index:calc(var(--z-dock) - 1);background:rgba(14,27,38,.35)}
-    .chat-panel{position:fixed;right:16px;bottom:calc(24px + env(safe-area-inset-bottom));z-index:var(--z-dock);
-      width:min(400px,calc(100vw - 32px));height:min(620px,calc(100vh - 120px));
-      display:flex;flex-direction:column;overflow:hidden;
-      background:var(--surface);border:1px solid var(--line-strong);border-radius:18px;
-      box-shadow:0 40px 90px -24px rgba(14,27,38,.45)}
-    .chat-head{display:flex;align-items:center;gap:12px;padding:15px 12px 15px 18px;flex:none;
-      background:var(--surface-2);border-bottom:1px solid var(--line)}
-    .chat-head .av{width:40px;height:40px;border-radius:11px;background:var(--brand-tint);
-      border:1px solid var(--brand-tint-2);display:flex;align-items:center;justify-content:center;flex:none}
-    .chat-head .av svg{stroke:var(--brand)}
-    .chat-head h3{font-size:1.16rem;line-height:1.1;margin-bottom:3px}
-    .chat-head span{font-size:.82rem;color:var(--muted-2);display:flex;align-items:center;gap:6px}
-    .chat-head .dot{width:7px;height:7px;box-shadow:none}
-    .chat-call{margin-left:auto;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;flex:none;
-      border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);
-      font-weight:700;font-size:.9rem;transition:background .18s,border-color .18s,color .18s}
-    .chat-call:hover{background:var(--brand-tint);border-color:var(--brand);color:var(--brand)}
-    .chat-close{width:44px;height:44px;flex:none;border:0;border-radius:10px;background:transparent;
-      color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s,color .18s}
-    .chat-close:hover{background:rgba(14,27,38,.06);color:var(--ink)}
-    .chat-log{flex:1;min-height:0;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px;
-      font-size:.99rem;line-height:1.55;overscroll-behavior:contain}
-    .msg{max-width:88%;padding:11px 15px;border-radius:15px;white-space:pre-wrap;word-wrap:break-word}
-    .msg.bot{background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start;color:var(--ink)}
-    .msg.me{background:var(--brand);color:#fff;border-bottom-right-radius:5px;align-self:flex-end;font-weight:500}
-    .msg.warn{background:var(--brand-tint);border:1px dashed var(--line-strong);align-self:stretch;max-width:100%;color:var(--muted)}
-    .msg.warn a{color:var(--brand);font-weight:700;text-decoration:underline}
-    .dots{display:inline-flex;gap:4px;align-items:center;height:10px}
-    .dots i{width:6px;height:6px;border-radius:50%;background:var(--muted-2)}
-    @media (prefers-reduced-motion:no-preference){
-      .dots i{animation:blink 1.2s infinite}
-      .dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
-      @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
-    }
-    .chips{display:flex;gap:8px;padding:12px 14px 0;overflow-x:auto;scrollbar-width:none;flex:none}
-    .chips::-webkit-scrollbar{display:none}
-    .chips:empty{display:none}
-    .chips button{flex:none;min-height:44px;padding:8px 15px;border-radius:999px;white-space:nowrap;
-      border:1px solid var(--brand-tint-2);background:var(--brand-tint);color:var(--brand);
-      font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;
-      transition:background .18s,border-color .18s}
-    .chips button:hover{background:var(--brand-tint-2);border-color:var(--brand)}
-    .conf{align-self:stretch;max-width:100%;background:var(--bg);border:1px solid var(--line-strong);
-      border-radius:15px;padding:15px;display:grid;gap:10px}
-    .conf h4{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;
-      font-size:1.1rem;color:var(--ink)}
-    .conf label{font-size:.82rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px}
-    .conf input{width:100%;min-height:46px;padding:10px 13px;font:inherit;font-size:.98rem;color:var(--ink);
-      background:var(--surface);border:1px solid var(--line-strong);border-radius:10px}
-    .conf input:focus{outline:none;border-color:var(--brand)}
-    .conf .btn{width:100%;min-height:48px}
-    .conf small{color:var(--muted-2);font-size:.8rem;line-height:1.4}
-    .chat-foot{flex:none;border-top:1px solid var(--line);background:var(--surface-2)}
-    .chat-form{display:flex;gap:8px;padding:12px}
-    .chat-icon{width:46px;height:46px;flex:none;border:1px solid var(--line-strong);border-radius:11px;
-      background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;
-      transition:color .18s,border-color .18s,background .18s}
-    .chat-icon:hover{color:var(--brand);border-color:var(--brand);background:var(--brand-tint)}
-    .chat-icon:disabled{opacity:.45;cursor:not-allowed}
-    .chat-form input{flex:1;min-width:0;min-height:46px;padding:10px 14px;font:inherit;font-size:1rem;
-      color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:11px}
-    .chat-form input::placeholder{color:var(--muted-2)}
-    .chat-form input:focus{outline:none;border-color:var(--brand)}
-    .chat-send{width:46px;height:46px;flex:none;border:0;border-radius:11px;background:var(--brand);color:#fff;
-      cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s,opacity .18s}
-    .chat-send:hover{background:#0C639A}
-    .chat-send:disabled{opacity:.5;cursor:not-allowed}
-    .chat-legal{padding:0 14px 10px;text-align:center}
-    .chat-fecha{background:none;border:0;color:var(--brand);font:inherit;font-weight:700;font-size:.92rem;
-      cursor:pointer;padding:7px 10px;min-height:40px;border-radius:8px;transition:background .18s}
-    .chat-fecha:hover{background:var(--brand-tint)}
-    @media (max-width:820px){
-      .chat-fab{bottom:calc(74px + env(safe-area-inset-bottom));height:52px;font-size:1rem}
-      .chat-panel{inset:0;width:auto;height:100dvh;max-height:none;border:0;border-radius:0}
-      .chat-head{padding-top:calc(15px + env(safe-area-inset-top))}
-      .chat-foot{padding-bottom:env(safe-area-inset-bottom)}
-      .chat-call span{display:none}
-    }
   </style>
 </head>
 <body>
@@ -433,7 +350,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Checklist e entrega com assinatura e foto</li>
       </ul>
     </div>
-    <div class="ph"><img src="assets/frota-duplo-evoque.webp" alt="Reboque duplo da G7: Range Rover Evoque na plataforma e Cruze engatado" width="1600" height="900"></div>
+    <div class="ph cut"><img src="assets/frota-vw-g7.webp" alt="Caminhão plataforma da G7 Guinchos com a marca na porta — VW Delivery 9.170" width="1181" height="853"></div>
     <div class="ctas">
       <a class="btn btn-brand" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
         <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg>
@@ -453,10 +370,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         <img src="assets/logo-itau.svg" class="sq" alt="Itaú" width="500" height="500">
         <img src="assets/logo-allianz.svg" class="sq" alt="Allianz" width="300" height="134">
         <img src="assets/logo-mapfre.svg" class="sq" alt="Mapfre" width="400" height="200">
-        <span class="mq-tx">Maxpar</span>
-        <span class="mq-tx">SulAmérica</span>
-        <span class="mq-tx">Tokio Marine</span>
-        <span class="mq-tx">Mondial</span>
+        <img src="assets/logo-maxpar.svg" alt="Maxpar" width="178" height="42">
+        <img src="assets/logo-sulamerica-marca.png" alt="SulAmérica" width="1310" height="345">
+        <img src="assets/logo-tokio.png" alt="Tokio Marine Seguradora" width="170" height="40">
+        <img src="assets/logo-mondial.jpg" alt="Mondial Assistance" width="150" height="41">
       </div>
       <div class="mq-grp" aria-hidden="true">
         <img src="assets/logo-loovi.svg" alt="" width="122" height="19">
@@ -466,10 +383,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         <img src="assets/logo-itau.svg" class="sq" alt="" width="500" height="500">
         <img src="assets/logo-allianz.svg" class="sq" alt="" width="300" height="134">
         <img src="assets/logo-mapfre.svg" class="sq" alt="" width="400" height="200">
-        <span class="mq-tx">Maxpar</span>
-        <span class="mq-tx">SulAmérica</span>
-        <span class="mq-tx">Tokio Marine</span>
-        <span class="mq-tx">Mondial</span>
+        <img src="assets/logo-maxpar.svg" alt="" width="178" height="42">
+        <img src="assets/logo-sulamerica-marca.png" alt="" width="1310" height="345">
+        <img src="assets/logo-tokio.png" alt="" width="170" height="40">
+        <img src="assets/logo-mondial.jpg" alt="" width="150" height="41">
       </div>
     </div>
   </div>
@@ -592,10 +509,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         <span><img src="assets/logo-itau.svg" class="sq" alt="Itaú" width="500" height="500"></span>
         <span><img src="assets/logo-allianz.svg" class="sq" alt="Allianz" width="300" height="134"></span>
         <span><img src="assets/logo-mapfre.svg" class="sq" alt="Mapfre" width="400" height="200"></span>
-        <span>Maxpar</span>
-        <span>SulAmérica</span>
-        <span>Tokio Marine</span>
-        <span>Mondial</span>
+        <span><img src="assets/logo-maxpar.svg" alt="Maxpar" width="178" height="42"></span>
+        <span><img src="assets/logo-sulamerica-marca.png" alt="SulAmérica" width="1310" height="345"></span>
+        <span><img src="assets/logo-tokio.png" alt="Tokio Marine Seguradora" width="170" height="40"></span>
+        <span><img src="assets/logo-mondial.jpg" alt="Mondial Assistance" width="150" height="41"></span>
         <span>+ assistências 24h</span>
       </div>
       <small>Lista parcial de operações atendidas.</small>
@@ -685,205 +602,6 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </a>
 </nav>
 
-<button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel">
-  <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-chat"/></svg>
-  Atendimento 24h
-</button>
-
-<div class="chat-scrim" id="chatScrim" hidden></div>
-
-<section class="chat-panel" id="chatPanel" role="dialog" aria-label="Atendimento G7 Guinchos 24 horas" hidden>
-  <div class="chat-head">
-    <div class="av"><svg width="21" height="21" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-truck"/></svg></div>
-    <div>
-      <h3>Atendimento G7</h3>
-      <span><span class="dot" aria-hidden="true"></span> Online agora &middot; 24h</span>
-    </div>
-    <a class="chat-call" href="tel:+5511951251014">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tel"/></svg>
-      <span>Ligar</span>
-    </a>
-    <button class="chat-close" id="chatClose" aria-label="Fechar atendimento">
-      <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><use href="#i-x"/></svg>
-    </button>
-  </div>
-
-  <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-atomic="false"></div>
-
-  <div class="chips" id="chatChips"></div>
-
-  <div class="chat-foot">
-    <form class="chat-form" id="chatForm">
-      <button class="chat-icon" type="button" id="chatGps" aria-label="Enviar minha localização">
-        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-pin"/></svg>
-      </button>
-      <label class="sr" for="chatInput">Sua mensagem</label>
-      <input id="chatInput" type="text" maxlength="400" autocomplete="off" placeholder="Escreve o que aconteceu">
-      <button class="chat-send" type="submit" id="chatSend" aria-label="Enviar mensagem">
-        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </button>
-    </form>
-    <p class="chat-legal"><button class="chat-fecha" type="button" id="fecharPedido">Finalizar e chamar o guincho &rarr;</button></p>
-  </div>
-</section>
-
-<script>
-(() => {
-  const WA = '5511951251014', TEL = '+5511951251014';
-  const $ = id => document.getElementById(id);
-  const fab = $('chatFab'), panel = $('chatPanel'), scrim = $('chatScrim'), chips = $('chatChips');
-  const log = $('chatLog'), form = $('chatForm'), input = $('chatInput'), send = $('chatSend');
-  const sid = sessionStorage.getItem('g7sid') ||
-    (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2)).slice(0, 24);
-  sessionStorage.setItem('g7sid', sid);
-
-  const meuHistorico = [];
-  let geo = null;
-
-  const scroll = () => {
-    if (log.scrollHeight - log.scrollTop - log.clientHeight < 100) log.scrollTop = log.scrollHeight;
-  };
-  const bubble = (texto, cls) => {
-    const el = document.createElement('div');
-    el.className = 'msg ' + (cls || 'bot');
-    el.textContent = texto;
-    log.append(el); scroll(); return el;
-  };
-
-  const fallback = () => {
-    const el = document.createElement('div');
-    el.className = 'msg warn';
-    el.innerHTML = 'Não consegui responder agora. Fala direto com a gente: ' +
-      '<a href="https://api.whatsapp.com/send?phone=' + WA + '&text=Preciso%20de%20atendimento." target="_blank" rel="noopener">WhatsApp</a>' +
-      ' ou <a href="tel:' + TEL + '">(11) 95125-1014</a>.';
-    log.append(el); scroll();
-  };
-
-  const ATALHOS = [
-    ['Guincho de carro',  'Preciso de guincho pro meu carro'],
-    ['Reboque de moto',   'Preciso rebocar minha moto'],
-    ['Tombado ou preso',  'Meu veículo está tombado ou em local sem acesso pra plataforma'],
-    ['Outros serviços',   'Quais serviços vocês fazem?']
-  ];
-  const mostrarAtalhos = () => {
-    chips.innerHTML = '';
-    ATALHOS.forEach(par => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.textContent = par[0];
-      b.addEventListener('click', () => { chips.innerHTML = ''; enviar(par[1]); });
-      chips.append(b);
-    });
-  };
-
-  async function enviar(texto) {
-    bubble(texto, 'me');
-    meuHistorico.push(texto);
-    chips.innerHTML = '';
-    input.value = ''; input.disabled = send.disabled = true;
-    const wait = bubble('', 'bot');
-    wait.innerHTML = '<span class="dots"><i></i><i></i><i></i></span>';
-
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 40000);
-    try {
-      const r = await fetch('/api/chat', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pergunta: texto, sessionId: sid, local: geo }),
-        signal: ctrl.signal
-      });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      const d = await r.json();
-      const txt = String(d.resposta || d.output || d.text || '').trim();
-      wait.remove();
-      if (txt) bubble(txt); else fallback();
-    } catch (e) {
-      wait.remove(); fallback();
-    } finally {
-      clearTimeout(timer);
-      input.disabled = send.disabled = false;
-      input.focus();
-    }
-  }
-
-  let iniciado = false;
-  const abrir = () => {
-    panel.hidden = false; scrim.hidden = false; fab.setAttribute('aria-expanded', 'true');
-    if (!iniciado) {
-      iniciado = true;
-      bubble('Oi! Aqui é a G7 Guinchos, atendimento 24 horas. Me conta o que aconteceu e onde você está.');
-      mostrarAtalhos();
-    }
-    input.focus();
-  };
-  const fechar = () => {
-    panel.hidden = scrim.hidden = true;
-    fab.setAttribute('aria-expanded', 'false'); fab.focus();
-  };
-  fab.addEventListener('click', abrir);
-  $('chatClose').addEventListener('click', fechar);
-  scrim.addEventListener('click', fechar);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) fechar(); });
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const t = input.value.trim();
-    if (t) enviar(t);
-  });
-
-  $('chatGps').addEventListener('click', () => {
-    const btn = $('chatGps');
-    if (!navigator.geolocation) {
-      bubble('Seu navegador não permite localização. Me diz a rua ou um ponto de referência.');
-      return;
-    }
-    btn.disabled = true;
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        btn.disabled = false;
-        geo = { lat: +pos.coords.latitude.toFixed(6), lng: +pos.coords.longitude.toFixed(6) };
-        enviar('Estou nesta coordenada: ' + geo.lat + ', ' + geo.lng);
-      },
-      () => {
-        btn.disabled = false;
-        bubble('Não consegui pegar sua localização. Me diz a rua, o número ou um ponto de referência que resolve igual.');
-      },
-      { enableHighAccuracy: true, timeout: 12000 }
-    );
-  });
-
-  $('fecharPedido').addEventListener('click', () => {
-    if ($('cardConf')) { $('ldNome').focus(); return; }
-    const card = document.createElement('form');
-    card.className = 'conf'; card.id = 'cardConf';
-    card.innerHTML =
-      '<h4>Fechar chamado</h4>' +
-      '<div><label for="ldNome">Seu nome</label>' +
-      '<input id="ldNome" type="text" required maxlength="60" autocomplete="name"></div>' +
-      '<div><label for="ldTel">Telefone com DDD</label>' +
-      '<input id="ldTel" type="tel" required maxlength="20" autocomplete="tel" placeholder="(11) 90000-0000"></div>' +
-      '<button class="btn btn-wa" type="submit">Enviar pedido pro WhatsApp</button>' +
-      '<small>Vai junto tudo o que você contou aqui, já escrito. A equipe confirma o valor na hora.</small>';
-    card.addEventListener('submit', ev => {
-      ev.preventDefault();
-      const linhas = ['Preciso de atendimento.',
-        'Nome: ' + $('ldNome').value.trim(),
-        'Telefone: ' + $('ldTel').value.trim()];
-      if (meuHistorico.length) {
-        linhas.push('', 'O que contei no site:');
-        meuHistorico.forEach(m => linhas.push('- ' + m));
-      }
-      if (geo) linhas.push('', 'Minha localização: https://maps.google.com/?q=' + geo.lat + ',' + geo.lng);
-      window.open('https://api.whatsapp.com/send?phone=' + WA + '&text=' +
-        encodeURIComponent(linhas.join(String.fromCharCode(10))), '_blank', 'noopener');
-      card.remove();
-      bubble('Pedido montado e mandado pro WhatsApp da G7. Se ele não abrir, liga em (11) 95125-1014 que tem gente acordada.');
-    });
-    log.append(card);
-    log.scrollTop = log.scrollHeight;
-    $('ldNome').focus();
-  });
-})();
-</script>
 
 <script type="application/ld+json">
 {
