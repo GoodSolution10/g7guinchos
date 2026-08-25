@@ -315,6 +315,11 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       .nav-in{justify-content:center} /* sobrou so a logo na barra: centraliza (pedido 25/08) */
     }
     @media (max-width:400px){ .stat b{font-size:2.1rem} .wrap{padding:0 18px} }
+    /* rolagem encaixa secao a secao no desktop (pedido 25/08); mobile fica livre — secoes mais altas que a tela */
+    @media (min-width:821px){
+      html{scroll-snap-type:y proximity}
+      #inicio,#servicos,#seguranca,#seguradoras,#quem-somos,#frota,#contatos{scroll-snap-align:start;scroll-margin-top:74px}
+    }
 
   </style>
 </head>
@@ -348,8 +353,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <div class="menu">
     <a href="#servicos">Serviços</a>
     <a href="#seguranca">Segurança</a>
-    <a href="#frota">Frota</a>
     <a href="#seguradoras">Seguradoras</a>
+    <a href="#frota">Frota</a>
     <a href="#contatos">Contatos</a>
   </div>
   <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
@@ -520,41 +525,6 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </div>
 </div></section>
 
-<section class="sec" id="frota"><div class="wrap">
-  <h2 class="title">Frota própria: <em>do básico ao esportivo</em></h2>
-  <p class="lead">Mais de 10 veículos próprios — e o cuidado que já transportou Ferrari.</p>
-  <div class="gal">
-    <figure>
-      <img src="assets/frota-ferrari-458.webp" alt="Ferrari 458 vermelha na plataforma da G7" width="716" height="716" loading="lazy">
-      <figcaption>Ferrari 458 — esportivos</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-ferrari-360.webp" alt="Ferrari 360 amarela na plataforma da G7" width="1657" height="931" loading="lazy">
-      <figcaption>Ferrari 360</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-duplo-evoque.webp" alt="Range Rover Evoque na plataforma e Cruze engatado" width="1600" height="900" loading="lazy">
-      <figcaption>Reboque duplo</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-moto-cb250.jpg" alt="Honda CB 250 vermelha na carretinha de motos da G7" width="1575" height="1181" loading="lazy">
-      <figcaption>Reboque de moto</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-motos-duplo.jpg" alt="Duas motos transportadas juntas na carretinha da G7" width="1599" height="899" loading="lazy">
-      <figcaption>Duas motos por viagem</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-cavalos.webp" alt="Dois cavalos mecânicos removidos pela G7" width="1280" height="720" loading="lazy">
-      <figcaption>Remoção de pesados</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-hrv.webp" alt="Honda HR-V na plataforma da G7" width="1280" height="720" loading="lazy">
-      <figcaption>Plataforma para leves</figcaption>
-    </figure>
-  </div>
-</div></section>
-
 <section class="sec b2b-bg" id="seguradoras"><div class="wrap">
   <div class="b2b">
     <div>
@@ -608,6 +578,41 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       <li><svg width="19" height="19" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Checklist na origem e entrega com assinatura e foto</li>
     </ul>
     <p class="quote">"Te atender é a nossa missão"</p>
+  </div>
+</div></section>
+
+<section class="sec" id="frota"><div class="wrap">
+  <h2 class="title">Frota própria: <em>do básico ao esportivo</em></h2>
+  <p class="lead">Mais de 10 veículos próprios — e o cuidado que já transportou Ferrari.</p>
+  <div class="gal">
+    <figure>
+      <img src="assets/frota-ferrari-458.webp" alt="Ferrari 458 vermelha na plataforma da G7" width="716" height="716" loading="lazy">
+      <figcaption>Ferrari 458 — esportivos</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-ferrari-360.webp" alt="Ferrari 360 amarela na plataforma da G7" width="1657" height="931" loading="lazy">
+      <figcaption>Ferrari 360</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-duplo-evoque.webp" alt="Range Rover Evoque na plataforma e Cruze engatado" width="1600" height="900" loading="lazy">
+      <figcaption>Reboque duplo</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-moto-cb250.jpg" alt="Honda CB 250 vermelha na carretinha de motos da G7" width="1575" height="1181" loading="lazy">
+      <figcaption>Reboque de moto</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-motos-duplo.jpg" alt="Duas motos transportadas juntas na carretinha da G7" width="1599" height="899" loading="lazy">
+      <figcaption>Duas motos por viagem</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-cavalos.webp" alt="Dois cavalos mecânicos removidos pela G7" width="1280" height="720" loading="lazy">
+      <figcaption>Remoção de pesados</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/frota-hrv.webp" alt="Honda HR-V na plataforma da G7" width="1280" height="720" loading="lazy">
+      <figcaption>Plataforma para leves</figcaption>
+    </figure>
   </div>
 </div></section>
 
