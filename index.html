@@ -128,12 +128,18 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .rail-plan ul{list-style:none;display:grid;gap:11px;margin:20px 0}
     .rail-plan li{display:flex;gap:11px;align-items:flex-start;color:var(--ink);font-size:.97rem}
     .rail-plan li svg{flex:none;margin-top:4px;stroke:var(--ok)}
-    .rail-plan .ph{border-radius:11px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/5;background:var(--surface-2)}
-    .rail-plan .ph img{width:100%;height:100%;object-fit:cover}
-    /* recorte transparente (caminhao com a marca): contain sobre degrade, cover decapitaria a cabine */
-    .rail-plan .ph.cut{aspect-ratio:16/8;background:linear-gradient(180deg,var(--surface) 0%,var(--brand-tint) 100%)}
-    .rail-plan .ph.cut img{object-fit:contain;padding:10px 16px}
-    .rail-plan .ctas{display:flex;gap:12px;flex-wrap:wrap}
+    /* card dividido: dois atalhos com icone (pedido 25/08) no lugar da foto + botoes */
+    .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .duo-item{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 18px;
+      background:var(--bg);border:1px solid var(--line);border-radius:12px;
+      transition:border-color .22s,box-shadow .22s,transform .22s}
+    .duo-item:hover{border-color:rgba(15,119,184,.45);box-shadow:var(--shadow-2);transform:translateY(-3px)}
+    .duo-item .ic{width:46px;height:46px;border-radius:50%;background:var(--brand);display:flex;
+      align-items:center;justify-content:center;box-shadow:0 8px 18px -8px rgba(15,119,184,.6)}
+    .duo-item .ic svg{stroke:#fff}
+    .duo-item b{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;
+      letter-spacing:.02em;font-size:1.22rem;line-height:1.1;color:var(--ink)}
+    .duo-item small{font-size:.88rem;color:var(--muted-2);line-height:1.4}
 
     /* carrossel de prestadoras dentro do hero (pedido 24/08) */
     .mq{grid-column:1/-1;position:relative;overflow:hidden;background:var(--surface);
@@ -204,6 +210,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .gal figure:hover{box-shadow:var(--shadow-2);transform:translateY(-4px)}
     .gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
     .gal figure:hover img{transform:scale(1.05)}
+    /* recorte transparente (caminhao com a marca): contain sobre degrade, cover decapitaria a cabine */
+    .gal figure.cut{background:linear-gradient(180deg,var(--surface) 0%,var(--brand-tint) 100%)}
+    .gal .cut img{object-fit:contain;padding:14px 14px 34px}
     .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:38px 16px 14px;color:#fff;font-weight:600;font-size:.95rem;
       background:linear-gradient(180deg,transparent 0%,rgba(8,14,19,.78) 100%)}
 
@@ -315,6 +324,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
 </svg>
@@ -377,13 +387,17 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Checklist e entrega com assinatura e foto</li>
       </ul>
     </div>
-    <div class="ph cut"><img src="assets/frota-vw-g7.webp" alt="Caminhão plataforma da G7 Guinchos com a marca na porta — VW Delivery 9.170" width="1181" height="853"></div>
-    <div class="ctas">
-      <a class="btn btn-brand" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
-        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg>
-        Agendar transporte
+    <div class="duo">
+      <a class="duo-item" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <span class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-calc"/></svg></span>
+        <b>Fazer orçamento</b>
+        <small>Valor na hora, pelo WhatsApp</small>
       </a>
-      <a class="btn btn-line" href="#seguradoras">Sou seguradora / empresa</a>
+      <a class="duo-item" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
+        <span class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg></span>
+        <b>Agendar transporte</b>
+        <small>Data e hora marcadas</small>
+      </a>
     </div>
   </section>
 
@@ -515,9 +529,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       <img src="assets/frota-hrv.webp" alt="Honda HR-V na plataforma da G7" width="1280" height="720" loading="lazy">
       <figcaption>Plataforma para leves</figcaption>
     </figure>
-    <figure>
-      <img src="assets/frota.webp" alt="Frota da G7 Guinchos reunida" width="1280" height="960" loading="lazy">
-      <figcaption>Frota própria · São Paulo</figcaption>
+    <figure class="cut">
+      <img src="assets/frota-vw-g7.webp" alt="Caminhão plataforma da G7 Guinchos com a marca na porta — VW Delivery 9.170" width="1181" height="853" loading="lazy">
+      <figcaption>Plataforma VW Delivery — frota G7</figcaption>
     </figure>
   </div>
 </div></section>
