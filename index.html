@@ -100,8 +100,23 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       letter-spacing:.06em;text-transform:uppercase;vertical-align:super;margin-left:10px;
       padding:6px 12px;border-radius:999px;background:var(--brand-hi);color:#04121D;
       display:inline-block;transform:translateY(-.25em)}
-    .rail-sos h1{color:#fff;font-size:clamp(2.4rem,4.6vw,3.7rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.55)}
+    .rail-sos h1,.rail-sos .hx{margin:0;font-family:'Barlow Condensed',system-ui,sans-serif;text-transform:uppercase;
+      letter-spacing:-.02em;line-height:1.02;font-weight:800;color:#fff;
+      font-size:clamp(2.4rem,4.6vw,3.7rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.55)}
     .rail-sos p{margin:12px 0 22px;max-width:40ch;opacity:.92}
+    /* carrossel de mensagens (pedido 25/08): 3 fatias em fade, CSS puro; telefone e botões ficam fixos */
+    .sos-slides{display:grid}
+    .sos-slides .slide{grid-area:1/1;opacity:0}
+    @media (prefers-reduced-motion:no-preference){
+      .sos-slides .slide{animation:sosfade 18s infinite}
+      .sos-slides .slide:nth-child(2){animation-delay:6s}
+      .sos-slides .slide:nth-child(3){animation-delay:12s}
+      @keyframes sosfade{0%{opacity:0}2%,31%{opacity:1}36%,100%{opacity:0}}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .sos-slides .slide{display:none}
+      .sos-slides .slide:first-child{display:block;opacity:1}
+    }
     .rail-sos .num{display:inline-block;font-family:'Barlow Condensed';font-weight:800;
       font-size:clamp(2rem,3.4vw,2.9rem);letter-spacing:-.01em;line-height:1;color:#fff;margin-bottom:18px}
     .rail-sos .num:hover{color:var(--brand-hi)}
@@ -325,17 +340,29 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 <header id="inicio"><div class="wrap split">
   <section class="rail rail-sos" aria-label="Socorro imediato">
     <div class="media"><img src="assets/frota-cargo-815.webp" alt="" width="1600" height="900" fetchpriority="high"></div>
-    <h1>Quebrou? A G7 <em style="color:var(--brand-hi);font-style:normal">sai agora</em><sup class="h24">24 horas</sup></h1>
-    <p>Guincho em São Paulo e região — madrugada, feriado ou domingo, atendemos agora.</p>
+    <div class="sos-slides">
+      <div class="slide">
+        <h1>Quebrou? A G7 <em style="color:var(--brand-hi);font-style:normal">sai agora</em><sup class="h24">24 horas</sup></h1>
+        <p>Guincho em São Paulo e região — madrugada, feriado ou domingo, atendemos agora.</p>
+      </div>
+      <div class="slide" aria-hidden="true">
+        <p class="hx">Mande sua <em style="color:var(--brand-hi);font-style:normal">localização</em> no WhatsApp</p>
+        <p>Em tempo real: a gente já sabe onde você está e o guincho mais próximo sai na hora.</p>
+      </div>
+      <div class="slide" aria-hidden="true">
+        <p class="hx">Cotação <em style="color:var(--brand-hi);font-style:normal">na hora</em>, sem compromisso</p>
+        <p>Chama, conta o que aconteceu e recebe o valor rapidinho — sem formulário, sem espera.</p>
+      </div>
+    </div>
     <a class="num" href="tel:+5511951251014">(11) 95125-1014</a>
     <div class="ctas">
-      <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+      <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20agora.%20Vou%20mandar%20minha%20localiza%C3%A7%C3%A3o." target="_blank" rel="noopener">
         <svg width="21" height="21" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
-        Chamar guincho agora
+        Pedir guincho no WhatsApp
       </a>
       <a class="btn btn-ghost" href="tel:+5511951251014">
         <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tel"/></svg>
-        Ligar agora
+        Prefiro ligar
       </a>
     </div>
   </section>
