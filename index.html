@@ -274,15 +274,27 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     /* contatos */
     .contact-bg{background:var(--surface);border-top:1px solid var(--line)}
     .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:48px}
-    .cbox{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:28px;
+    .cbox{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-1);
       transition:border-color .22s,box-shadow .22s,transform .22s}
     .cbox:hover{border-color:rgba(15,119,184,.4);box-shadow:var(--shadow-2);transform:translateY(-4px)}
-    .cbox .ic{width:46px;height:46px;border-radius:11px;background:var(--brand-tint);border:1px solid var(--brand-tint-2);
-      display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-    .cbox .ic svg{stroke:var(--brand)}
-    .cbox h3{font-size:1.22rem;margin-bottom:10px}
-    .cbox a{color:var(--brand);font-weight:600;display:inline-flex;align-items:center;min-height:44px}
-    .cbox a:hover{text-decoration:underline}
+    /* mesmo vocabulario da Seguranca: circulo solido que pula no hover (pedido 25/08) */
+    .cbox .ic{width:52px;height:52px;border-radius:50%;background:var(--brand);
+      display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+      box-shadow:0 8px 18px -8px rgba(15,119,184,.6);transition:transform .25s,box-shadow .25s}
+    .cbox .ic svg{stroke:#fff}
+    .cbox:hover .ic{transform:translateY(-4px) scale(1.08);box-shadow:0 14px 26px -10px rgba(15,119,184,.65)}
+    .cbox-wa .ic{background:var(--wa);box-shadow:0 8px 18px -8px rgba(37,211,102,.6)}
+    .cbox-wa .ic svg{stroke:#04170C}
+    .cbox-wa:hover{border-color:rgba(37,211,102,.5)}
+    .cbox-wa:hover .ic{box-shadow:0 14px 26px -10px rgba(37,211,102,.65)}
+    .cbox h3{font-size:1.22rem;margin-bottom:10px;transition:color .2s}
+    .cbox:hover h3{color:var(--brand)}
+    .cbox-wa:hover h3{color:var(--wa-hover)}
+    .cbox a{color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;
+      letter-spacing:.01em;display:inline-flex;align-items:center;gap:8px;min-height:42px;transition:color .18s}
+    .cbox a:hover{color:var(--brand)}
+    .cbox-wa a:hover{color:var(--wa-hover)}
+    .cbox a[href^="mailto"]{font-family:'Barlow',sans-serif;font-size:1.02rem;font-weight:600;word-break:break-all}
     .cbox p{font-size:.95rem;color:var(--muted-2)}
 
     footer{border-top:1px solid var(--line);background:var(--surface);padding:34px 0 calc(34px + env(safe-area-inset-bottom));font-size:.92rem;color:var(--muted-2)}
@@ -633,8 +645,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <h2 class="title">Fale com a <em>G7</em></h2>
   <p class="lead">Todos os dias, 24 horas. Escolha o canal mais fácil para você.</p>
   <div class="cgrid">
-    <div class="cbox">
-      <div class="ic"><svg width="21" height="21" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-chat"/></svg></div>
+    <div class="cbox cbox-wa">
+      <div class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-chat"/></svg></div>
       <h3>WhatsApp</h3>
       <a href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 95125-1014</a><br>
       <a href="https://api.whatsapp.com/send?phone=5511971766491&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">(11) 97176-6491</a>
