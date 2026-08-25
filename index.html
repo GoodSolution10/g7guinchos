@@ -94,8 +94,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .rail-sos .media{position:absolute;inset:0;z-index:-2;background:#0B1116}
     .rail-sos .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;
       filter:brightness(.48) contrast(1.15) saturate(.65);opacity:0}
-    .rail-sos .media img:first-child{object-position:22% 60%}
-    .rail-sos .media img:nth-child(3){object-position:50% 68%}
+    .rail-sos .media img:first-child{object-position:35% 58%}
+    .rail-sos .media img:nth-child(3){object-position:50% 55%}
     .rail-sos::before{content:"";position:absolute;inset:0;z-index:-1;
       background:linear-gradient(180deg,rgba(8,14,19,.5) 0%,rgba(8,14,19,.24) 40%,rgba(8,14,19,.78) 100%)}
     /* 24h como expoente do "sai agora" (pedido 24/08: "como se fosse elevado") */
@@ -129,8 +129,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .rail-plan h2{font-size:clamp(1.6rem,2.6vw,2.05rem);max-width:22ch}
     .rail-plan .desc{margin:10px 0 0;max-width:42ch;font-size:1rem}
     .rail-plan ul{list-style:none;display:grid;gap:11px;margin:20px 0}
-    .rail-plan li{display:flex;gap:11px;align-items:flex-start;color:var(--ink);font-size:.97rem}
-    .rail-plan li svg{flex:none;margin-top:4px;stroke:var(--ok)}
+    .rail-plan li{display:flex;gap:11px;align-items:center;color:var(--ink);font-size:.97rem;font-weight:500}
+    .rail-plan li .ck{width:26px;height:26px;border-radius:50%;background:rgba(29,168,78,.13);
+      display:flex;align-items:center;justify-content:center;flex:none}
+    .rail-plan li .ck svg{stroke:var(--ok)}
     /* card dividido: dois atalhos com icone (pedido 25/08) no lugar da foto + botoes */
     .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .duo-item{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 18px;
@@ -355,9 +357,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 <header id="inicio"><div class="wrap split">
   <section class="rail rail-sos" aria-label="Socorro imediato">
     <div class="media">
-      <img src="assets/frota-cargo-815.webp" alt="" width="1600" height="900" fetchpriority="high">
+      <img src="assets/frota-cargo-815-frente.jpg" alt="" width="1600" height="900" fetchpriority="high">
       <img src="assets/frota-duplo-fiesta.webp" alt="" width="1600" height="900">
-      <img src="assets/frota-hero.webp" alt="" width="1600" height="1200">
+      <img src="assets/frota.webp" alt="" width="1280" height="960">
     </div>
     <div class="sos-slides">
       <div class="slide">
@@ -388,12 +390,13 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 
   <section class="rail rail-plan" aria-label="Transporte agendado e empresas">
     <div>
-      <h2>Agendar transporte ou operação de frota</h2>
+      <span class="kick">Para empresas e agendamentos</span>
+      <h2>Transporte agendado e operação de frota</h2>
       <p class="desc">Leilão, oficina, transferência de pátio, seguradora ou assistência — com data marcada e entrega documentada.</p>
       <ul>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> +120 reboques por dia de capacidade</li>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Leves e pesados, frota própria</li>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Checklist e entrega com assinatura e foto</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> +120 reboques por dia de capacidade</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Leves e pesados, frota própria</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Checklist e entrega com assinatura e foto</li>
       </ul>
     </div>
     <div class="duo">
@@ -411,7 +414,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </section>
 
   <div class="mq" aria-label="Seguradoras e assistências que a G7 atende">
-    <p class="mq-label">Prestamos serviço para estas companhias</p>
+    <p class="mq-label">Quem confia na G7</p>
     <div class="mq-track">
       <div class="mq-grp">
         <img src="assets/logo-loovi.svg" alt="Loovi" width="122" height="19">
