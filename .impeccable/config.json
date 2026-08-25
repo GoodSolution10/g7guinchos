@@ -83,6 +83,168 @@
         ],
         "createdAt": "2026-08-25T02:32:58.438Z",
         "reason": "Gabriel pediu o carrossel de seguradoras nominalmente (25/08); pausa no hover e so anima sob prefers-reduced-motion:no-preference"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".8rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.642Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".88rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.709Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".9rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.777Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".94rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.845Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".95rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.914Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".97rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:45.981Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".98rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.049Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.22rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.116Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.5rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.188Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.6rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.255Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.05rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.322Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.6rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.389Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.9rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.462Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "6px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.533Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "8px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:30:46.602Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue (impeccable-documenter 25/08); detector em modo degradado (sem htmlparser2) nao le a rampa documentada"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "9px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:32:17.375Z",
+        "reason": "canonizado no DESIGN.md re-derivado (radiusScale inclui 9px); detector degradado nao le a rampa"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".92rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:32:29.610Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue; detector degradado nao le a rampa"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.1rem",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T04:32:29.675Z",
+        "reason": "canonizado no DESIGN.md re-derivado do build entregue; detector degradado nao le a rampa"
       }
     ]
   }
