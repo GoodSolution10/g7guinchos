@@ -332,6 +332,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
   <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
 </svg>
@@ -390,20 +391,20 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 
   <section class="rail rail-plan" aria-label="Transporte agendado e empresas">
     <div>
-      <span class="kick">Para empresas e agendamentos</span>
-      <h2>Transporte agendado e operação de frota</h2>
-      <p class="desc">Leilão, oficina, transferência de pátio, seguradora ou assistência — com data marcada e entrega documentada.</p>
+      <span class="kick">Agendamentos e empresas</span>
+      <h2>Transporte com dia e hora marcados</h2>
+      <p class="desc">Leilão, oficina, seguradora ou pátio: você marca, a G7 busca e entrega no horário.</p>
       <ul>
-        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> +120 reboques por dia de capacidade</li>
-        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Leves e pesados, frota própria</li>
-        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Checklist e entrega com assinatura e foto</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Mais de 120 reboques por dia</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Do popular ao pesado, frota própria</li>
+        <li><span class="ck"><svg width="14" height="14" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg></span> Entrega com foto e assinatura</li>
       </ul>
     </div>
     <div class="duo">
-      <a class="duo-item" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-        <span class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-calc"/></svg></span>
-        <b>Fazer orçamento</b>
-        <small>Valor na hora, pelo WhatsApp</small>
+      <a class="duo-item" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20ou%20recarga%20de%20bateria." target="_blank" rel="noopener">
+        <span class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-bolt"/></svg></span>
+        <b>Guincho / recarga de bateria</b>
+        <small>Bateria arriou? Recarga no local, sem reboque</small>
       </a>
       <a class="duo-item" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
         <span class="ic"><svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg></span>
@@ -414,7 +415,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </section>
 
   <div class="mq" aria-label="Seguradoras e assistências que a G7 atende">
-    <p class="mq-label">Serviços prestados:</p>
+    <p class="mq-label">Quem confia na G7</p>
     <div class="mq-track">
       <div class="mq-grp">
         <img src="assets/logo-loovi.svg" alt="Loovi" width="122" height="19">
