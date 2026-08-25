@@ -91,9 +91,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     /* trilho emergência: foto real + véu escuro, ação verde */
     .rail-sos{isolation:isolate;color:#fff;min-height:470px;justify-content:flex-end;padding:30px 34px}
     /* fundo acompanha o carrossel: 3 fotos empilhadas, mesmo fade/timing das mensagens (pedido 25/08) */
-    /* fundo estatico (decisao 25/08): quadro parado do video 1, so as mensagens se movem */
+    /* video fixo de fundo (pedido 25/08): so as mensagens trocam por cima */
     .rail-sos .media{position:absolute;inset:0;z-index:-2;background:#0B1116}
-    .rail-sos .media img,.rail-sos .media video{width:100%;height:100%;object-fit:cover;object-position:50% 60%;
+    .rail-sos .media video{width:100%;height:100%;object-fit:cover;object-position:50% 60%;
       filter:brightness(.48) contrast(1.15) saturate(.65)}
     .rail-sos::before{content:"";position:absolute;inset:0;z-index:-1;
       background:linear-gradient(180deg,rgba(8,14,19,.5) 0%,rgba(8,14,19,.24) 40%,rgba(8,14,19,.78) 100%)}
@@ -362,7 +362,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 <header id="inicio"><div class="wrap split">
   <section class="rail rail-sos" aria-label="Socorro imediato">
     <div class="media">
-      <img src="assets/hero-still.jpg" alt="" width="1280" height="719" fetchpriority="high">
+      <video src="assets/hero-guincho-v4.mp4" poster="assets/frota-cargo-815-frente.jpg" autoplay muted loop playsinline width="1280" height="720"></video>
     </div>
     <div class="sos-slides">
       <div class="slide">
@@ -667,6 +667,14 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </a>
 </nav>
 
+
+<script>
+// quem pediu menos movimento nao ganha video rodando de fundo
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const v = document.querySelector('.rail-sos video');
+  if (v) { v.removeAttribute('autoplay'); v.pause(); }
+}
+</script>
 
 <script type="application/ld+json">
 {
