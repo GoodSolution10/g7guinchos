@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-24T23:10:00-03:00",
+  "generatedAt": "2026-08-25T12:00:00-03:00",
   "title": "Design System: G7 Guinchos",
   "extensions": {
     "colorMeta": {
@@ -9,26 +9,29 @@
       "whatsapp-green": { "role": "secondary", "displayName": "WhatsApp Green", "canonical": "#25D366", "tonalRamp": ["oklch(25% 0.09 150)", "oklch(38% 0.13 150)", "oklch(50% 0.16 150)", "oklch(62% 0.19 150)", "oklch(74% 0.21 150)", "oklch(82% 0.16 150)", "oklch(90% 0.10 150)", "oklch(96% 0.04 150)"] },
       "online-green": { "role": "secondary", "displayName": "Online Green", "canonical": "#1DA84E", "tonalRamp": ["oklch(22% 0.08 150)", "oklch(34% 0.11 150)", "oklch(46% 0.14 150)", "oklch(58% 0.16 150)", "oklch(66% 0.15 150)", "oklch(78% 0.12 150)", "oklch(88% 0.08 150)", "oklch(96% 0.03 150)"] },
       "asphalt-ink": { "role": "neutral", "displayName": "Asphalt Ink", "canonical": "#0E1B26", "tonalRamp": ["oklch(15% 0.02 240)", "oklch(25% 0.02 240)", "oklch(38% 0.02 240)", "oklch(52% 0.02 240)", "oklch(66% 0.015 240)", "oklch(80% 0.01 240)", "oklch(90% 0.008 240)", "oklch(96% 0.005 240)"] },
+      "media-night": { "role": "neutral", "displayName": "Media Night", "canonical": "#0B1116", "tonalRamp": ["oklch(14% 0.015 240)", "oklch(22% 0.015 240)", "oklch(34% 0.015 240)", "oklch(48% 0.012 240)", "oklch(62% 0.01 240)", "oklch(76% 0.008 240)", "oklch(88% 0.006 240)", "oklch(95% 0.005 240)"] },
       "cloud-ground": { "role": "neutral", "displayName": "Cloud Ground", "canonical": "#F5F7FA", "tonalRamp": ["oklch(20% 0.01 240)", "oklch(35% 0.01 240)", "oklch(50% 0.01 240)", "oklch(65% 0.01 240)", "oklch(78% 0.008 240)", "oklch(88% 0.007 240)", "oklch(94% 0.006 240)", "oklch(97% 0.005 240)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Só o h1 do trilho de emergência, branco sobre o véu escuro; máx. 14ch." },
+      "display": { "displayName": "Display", "purpose": "H1 e slides .hx do trilho de emergência, branco sobre o véu com text-shadow 0 2px 30px rgba(0,0,0,.55); máx. 14ch." },
       "headline": { "displayName": "Headline", "purpose": "Títulos de seção, sempre com um trecho em <em> azul sem itálico; o h2 do trilho de agendamento é a versão contida (clamp(1.6rem,2.6vw,2.05rem))." },
-      "title": { "displayName": "Title", "purpose": "Títulos de card e item; mesma fôrma condensada caps 800." },
-      "body": { "displayName": "Body", "purpose": "Barlow 17px/1.65 (16px mobile); leads 1.08rem máx. 62ch." },
-      "label": { "displayName": "Label", "purpose": "Caps condensadas com tracking positivo: wordmark .17em, marquee .12em, chips B2B .1em, chat-fab .06em." }
+      "title": { "displayName": "Title", "purpose": "Títulos de card e item (1.22rem duo/contato, 1.4rem serviço, 1.5rem b2b); mesma fôrma condensada caps 800." },
+      "body": { "displayName": "Body", "purpose": "Barlow 17px/1.65 (16px mobile); leads 1.08rem máx. 62ch; micro-corpo .88–.98rem em cards e listas." },
+      "label": { "displayName": "Label", "purpose": "Caps condensadas com tracking positivo: wordmark .17em, rótulo do marquee .14em/.8rem, nomes do marquee .12em, chips B2B .1em." }
     },
     "shadows": [
       { "name": "shadow-1", "value": "0 1px 2px rgba(14,27,38,.05), 0 4px 14px -8px rgba(14,27,38,.10)", "purpose": "Cards, caixas e o marquee em repouso; sempre acompanhada de borda hairline de 1px." },
-      { "name": "shadow-2", "value": "0 4px 10px rgba(14,27,38,.06), 0 22px 40px -22px rgba(14,27,38,.28)", "purpose": "Rails do hero, foto de about, e estado hover de cards." },
-      { "name": "cta-glow-wa", "value": "0 10px 24px -12px rgba(37,211,102,.55)", "purpose": "Glow verde exclusivo de botões WhatsApp sólidos." },
-      { "name": "cta-glow-brand", "value": "0 10px 24px -12px rgba(15,119,184,.5)", "purpose": "Glow azul exclusivo de botões azuis sólidos." },
-      { "name": "pulse-ring", "value": "0 0 0 4px rgba(29,168,78,.18)", "purpose": "Anel do dot 'online', animado 2.4s ease-in-out (desligado em reduced-motion)." }
+      { "name": "shadow-2", "value": "0 4px 10px rgba(14,27,38,.06), 0 22px 40px -22px rgba(14,27,38,.28)", "purpose": "Rails do hero, foto de about, e estado hover de cards e duo-items." },
+      { "name": "cta-glow-wa", "value": "0 10px 24px -12px rgba(37,211,102,.55)", "purpose": "Glow verde exclusivo de botões WhatsApp sólidos (FAB: 0 12px 30px rgba(37,211,102,.4))." },
+      { "name": "cta-glow-brand", "value": "0 10px 24px -12px rgba(15,119,184,.5)", "purpose": "Glow azul de botões azuis sólidos; círculos de ícone usam 0 8px 18px -8px rgba(15,119,184,.6)." },
+      { "name": "text-veil", "value": "text-shadow: 0 2px 30px rgba(0,0,0,.55)", "purpose": "Exclusivo dos títulos brancos sobre o vídeo do hero — profundidade difusa, nunca outline ou sombra dura." },
+      { "name": "pulse-ring", "value": "0 0 0 4px rgba(29,168,78,.18)", "purpose": "Anel do dot 'online', animado 2.4s ease-in-out; reservado no CSS (desligado em reduced-motion)." }
     ],
     "motion": [
-      { "name": "state-fast", "value": "0.18s", "purpose": "FABs e micro-estados (cor, fundo)." },
+      { "name": "state-fast", "value": "0.18s", "purpose": "FAB e micro-estados (cor, fundo)." },
       { "name": "state-standard", "value": "0.2s–0.22s", "purpose": "Botões, cards, bordas, lift de hover." },
       { "name": "photo-zoom", "value": "transform 0.35s ease", "purpose": "Zoom 1.05 de fotos emolduradas no hover do card." },
+      { "name": "sos-slides", "value": "keyframe fade 18s infinite, delays 6s/12s", "purpose": "Carrossel CSS-only de 3 mensagens do hero em fade; reduced-motion mostra só a primeira." },
       { "name": "marquee-loop", "value": "translateX(-50%) 30s linear infinite", "purpose": "Loop CSS-only do marquee de parceiros; pausa no hover, desligado em reduced-motion." }
     ],
     "breakpoints": [
@@ -44,15 +47,15 @@
       "kind": "button",
       "refersTo": "button-wa",
       "description": "CTA primário de ação imediata; verde com texto quase-preto e glow verde.",
-      "html": "<a class=\"ds-btn-wa\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4\"/></svg>Chamar guincho agora</a>",
+      "html": "<a class=\"ds-btn-wa\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4\"/></svg>Pedir guincho no WhatsApp</a>",
       "css": ".ds-btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:1.02rem;border:0;border-radius:10px;cursor:pointer;text-decoration:none;background:#25D366;color:#04170C;box-shadow:0 10px 24px -12px rgba(37,211,102,.55);transition:background .2s,transform .2s}.ds-btn-wa:hover{background:#1EB456;transform:translateY(-2px)}.ds-btn-wa:focus-visible{outline:3px solid #0F77B8;outline-offset:3px}"
     },
     {
       "name": "Botão Brand",
       "kind": "button",
       "refersTo": "button-brand",
-      "description": "CTA azul de processo (agendar, parceria); glow azul.",
-      "html": "<a class=\"ds-btn-brand\" href=\"#\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"/><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/></svg>Agendar transporte</a>",
+      "description": "CTA azul de processo (parceria, e-mail); glow azul.",
+      "html": "<a class=\"ds-btn-brand\" href=\"#\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>Falar sobre parceria</a>",
       "css": ".ds-btn-brand{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:1.02rem;border:0;border-radius:10px;cursor:pointer;text-decoration:none;background:#0F77B8;color:#fff;box-shadow:0 10px 24px -12px rgba(15,119,184,.5);transition:background .2s,transform .2s}.ds-btn-brand:hover{background:#0C639A;transform:translateY(-2px)}.ds-btn-brand:focus-visible{outline:3px solid #0F77B8;outline-offset:3px}"
     },
     {
@@ -68,7 +71,7 @@
       "kind": "button",
       "refersTo": "button-ghost",
       "description": "O outline do véu escuro: vidro branco translúcido com blur; só sobre o Dark Veil.",
-      "html": "<div style=\"background:#0E1B26;padding:24px;border-radius:14px\"><a class=\"ds-btn-ghost\" href=\"#\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>Ligar agora</a></div>",
+      "html": "<div style=\"background:#0B1116;padding:24px;border-radius:14px\"><a class=\"ds-btn-ghost\" href=\"#\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>Prefiro ligar</a></div>",
       "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:1.02rem;border-radius:10px;cursor:pointer;text-decoration:none;background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(4px);transition:background .2s,border-color .2s,transform .2s}.ds-btn-ghost:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-2px)}.ds-btn-ghost:focus-visible{outline:3px solid #0F77B8;outline-offset:3px}"
     },
     {
@@ -78,6 +81,14 @@
       "description": "Card branco com moldura de foto 16/10, título condensado e link-seta azul; hover levanta 4px e esquenta a borda.",
       "html": "<article class=\"ds-card\"><div class=\"ds-card-ph\"></div><div class=\"ds-card-tx\"><h3>Carros, motos e SUVs</h3><p>Do popular ao esportivo: plataforma e amarração correta.</p><a class=\"ds-card-go\" href=\"#\">Solicitar <svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/></svg></a></div></article>",
       "css": ".ds-card{max-width:290px;background:#FFFFFF;border:1px solid rgba(14,27,38,.10);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(14,27,38,.05),0 4px 14px -8px rgba(14,27,38,.10);transition:border-color .22s,box-shadow .22s,transform .22s}.ds-card:hover{border-color:rgba(15,119,184,.4);box-shadow:0 4px 10px rgba(14,27,38,.06),0 22px 40px -22px rgba(14,27,38,.28);transform:translateY(-4px)}.ds-card-ph{aspect-ratio:16/10;background:#EDF1F6}.ds-card-tx{padding:20px;display:flex;flex-direction:column;flex:1}.ds-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;font-weight:800;font-size:1.4rem;color:#0E1B26;margin:0 0 6px}.ds-card p{font-family:'Barlow',system-ui,sans-serif;font-size:.95rem;line-height:1.65;color:rgba(14,27,38,.74);margin:0 0 16px}.ds-card-go{margin-top:auto;color:#0F77B8;font-family:'Barlow',system-ui,sans-serif;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:9px;min-height:44px}.ds-card-go svg{transition:transform .2s}.ds-card:hover .ds-card-go svg{transform:translateX(4px)}"
+    },
+    {
+      "name": "Duo-item (atalho)",
+      "kind": "card",
+      "refersTo": "duo-item",
+      "description": "Atalho-card do rail de agendamento: fundo claro 12px, círculo azul de ícone com glow, título condensado e uma linha small; o card inteiro é link.",
+      "html": "<a class=\"ds-duo\" href=\"#\"><span class=\"ds-duo-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2\"/><circle cx=\"6.5\" cy=\"16.5\" r=\"2.5\"/><circle cx=\"16.5\" cy=\"16.5\" r=\"2.5\"/></svg></span><b>Guincho</b><small>Na hora ou agendado, do popular ao pesado</small></a>",
+      "css": ".ds-duo{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:220px;padding:20px 18px;background:#F5F7FA;border:1px solid rgba(14,27,38,.10);border-radius:12px;text-decoration:none;transition:border-color .22s,box-shadow .22s,transform .22s}.ds-duo:hover{border-color:rgba(15,119,184,.45);box-shadow:0 4px 10px rgba(14,27,38,.06),0 22px 40px -22px rgba(14,27,38,.28);transform:translateY(-3px)}.ds-duo-ic{width:46px;height:46px;border-radius:50%;background:#0F77B8;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -8px rgba(15,119,184,.6)}.ds-duo b{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:1.22rem;line-height:1.1;color:#0E1B26}.ds-duo small{font-family:'Barlow',system-ui,sans-serif;font-size:.88rem;color:rgba(14,27,38,.68);line-height:1.4}"
     },
     {
       "name": "Marquee de parceiros",
@@ -110,49 +121,41 @@
       "description": "Link do menu com sublinhado azul de 2px que cresce da esquerda no hover.",
       "html": "<a class=\"ds-nav-link\" href=\"#\">Serviços</a>",
       "css": ".ds-nav-link{position:relative;display:inline-block;padding:10px 0;font-family:'Barlow',system-ui,sans-serif;font-weight:600;font-size:1rem;color:rgba(14,27,38,.74);text-decoration:none;transition:color .2s}.ds-nav-link::after{content:\"\";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:#0F77B8;transition:right .22s}.ds-nav-link:hover{color:#0E1B26}.ds-nav-link:hover::after{right:0}"
-    },
-    {
-      "name": "Input do chat",
-      "kind": "input",
-      "refersTo": "card",
-      "description": "Campo de texto do atendimento 24h; foco troca a borda para azul, sem glow.",
-      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Escreve o que aconteceu\">",
-      "css": ".ds-input{width:280px;min-height:46px;padding:10px 14px;font-family:'Barlow',system-ui,sans-serif;font-size:1rem;color:#0E1B26;background:#FFFFFF;border:1px solid rgba(14,27,38,.20);border-radius:11px}.ds-input::placeholder{color:rgba(14,27,38,.68)}.ds-input:focus{outline:none;border-color:#0F77B8}"
     }
   ],
   "narrative": {
     "northStar": "Dois Caminhos",
-    "overview": "O mundo é o \"G7 v5 light\": chão claro azulado (#F5F7FA), superfícies brancas, tinta quase-preta azulada, e duas vozes de cor com papéis fixos — o azul da marca fala de confiança e operação (navegação, links, acentos, agendamento) e o verde fala de ação e presença (\"estamos online, chama agora\": WhatsApp, dot pulsante, checkmarks). A primeira dobra encarna o North Star: um trilho escuro de emergência sobre foto real da frota, com ação verde, ao lado de um trilho claro e quieto de agendamento — fechados por uma faixa-marquise branca de logos de parceiros. O resto da página volta ao chão claro e mantém o azul como única voz de acento.\n\nA personalidade é de operadora, não de guincheiro de esquina: números tabulares grandes, caps condensadas, prova fotográfica real em toda seção, zero decoração gratuita. A densidade é generosa (seções de 92px, corpo 17px/1.65) porque o leitor primário está estressado, no sol, no celular.",
+    "overview": "O mundo é o \"G7 v5 light\": chão claro azulado (#F5F7FA), superfícies brancas, tinta quase-preta azulada, e duas vozes de cor com papéis fixos — o azul da marca fala de confiança e operação (navegação, links, acentos, agendamento) e o verde fala de ação e presença (\"estamos online, chama agora\": WhatsApp e checkmarks). A primeira dobra encarna o North Star: um trilho escuro de emergência sobre vídeo real da frota sob véu, com telefone gigante e ação verde, ao lado de um trilho claro e quieto de agendamento com dois atalhos-card — fechados por uma faixa-marquise branca de logos de parceiros. O resto da página volta ao chão claro e mantém o azul como única voz de acento.\n\nA personalidade é de operadora, não de guincheiro de esquina: números tabulares grandes, caps condensadas, prova fotográfica real em toda seção, zero decoração gratuita. A densidade é generosa (seções de 92px, corpo 17px/1.65) porque o leitor primário está estressado, no sol, no celular.",
     "keyCharacteristics": [
-      "Light mode obrigatório; a única superfície escura é o véu fotográfico do trilho de emergência.",
+      "Light mode obrigatório; a única superfície escura é o véu de mídia do trilho de emergência (vídeo com fallback #0B1116).",
       "Verde = ação/presença; azul = marca/estrutura; nunca invertidos.",
-      "Fotografia 100% real da frota — nenhuma imagem stock, nenhum ícone ilustrativo grande.",
-      "Ícones sempre em stroke SVG inline (sprite <symbol>), 16–28px, traço 2–2.8.",
-      "Hover levanta (-2px botões, -4px cards) e nada mais; reduced-motion desliga toda animação, inclusive o marquee."
+      "Fotografia e vídeo 100% reais da frota — nenhuma imagem stock, nenhum ícone ilustrativo grande.",
+      "Ícones sempre em stroke SVG inline (sprite <symbol>), 14–28px, traço 2–2.8.",
+      "Hover levanta (-2px botões, -3px/-4px cards) e nada mais; reduced-motion desliga toda animação — marquee, carrossel de slides e o autoplay do vídeo."
     ],
     "rules": [
       { "name": "The Two Voices Rule", "body": "Verde é ação e presença (WhatsApp, online, confirmação); azul é marca e estrutura (navegação, agendamento, informação). Um CTA verde promete conversa imediata; um CTA azul promete processo. Nunca usar verde decorativamente nem azul num botão de WhatsApp.", "section": "colors" },
       { "name": "The One Ink Rule", "body": "Não existem cinzas soltos: todo texto, linha e sombra deriva de #0E1B26 puro ou em alfa. Neutro novo = alfa novo da mesma tinta.", "section": "colors" },
-      { "name": "The Dark Veil Rule", "body": "Superfície escura só existe como foto real sob véu (brightness(.48) contrast(1.15) saturate(.65) + gradiente rgba(8,14,19,…)). Não há dark mode nem painéis escuros chapados.", "section": "colors" },
+      { "name": "The Dark Veil Rule", "body": "Superfície escura só existe como mídia real sob véu: vídeo/foto com filter brightness(.48) contrast(1.15) saturate(.65), backdrop #0B1116 e gradiente rgba(8,14,19,.5→.24→.78). Não há dark mode nem painéis escuros chapados.", "section": "colors" },
       { "name": "The Condensed Caps Rule", "body": "Todo h1/h2/h3 é Barlow Condensed 800, uppercase, letter-spacing -0.02em, line-height 1.02. Título fora dessa fôrma não é deste mundo.", "section": "typography" },
       { "name": "The Blue Em Rule", "body": "O destaque de um título é <em> com cor #0F77B8 (ou #39B5FF sobre escuro) e font-style: normal — cor no lugar de itálico, um trecho por título.", "section": "typography" },
       { "name": "The Border-And-Shadow Rule", "body": "Superfície elevada = borda hairline de 1px + sombra da escala; nunca só uma das duas.", "section": "elevation" },
-      { "name": "The Colored Glow Rule", "body": "Sombra colorida pertence exclusivamente a CTAs sólidos e carrega a cor do próprio botão em glow difuso com spread negativo — nunca sombra dura deslocada, nunca em cards.", "section": "elevation" }
+      { "name": "The Colored Glow Rule", "body": "Sombra colorida pertence exclusivamente a CTAs sólidos e círculos de ícone azuis, e carrega a cor da própria superfície em glow difuso com spread negativo — nunca sombra dura deslocada, nunca em cards.", "section": "elevation" }
     ],
     "dos": [
       "Do manter todo contato a um toque em qualquer ponto: navbar com WhatsApp, FAB/dock, tel: e wa links por seção — CTAs verdes para \"agora\", azuis para \"processo\".",
-      "Do usar só fotos reais da frota, sempre dentro de moldura com aspect-ratio fixo, borda hairline e object-fit: cover.",
-      "Do aplicar o padrão de hover completo: lift (-2px/-4px) + upgrade de sombra + transição .18–.22s, com tudo desligado em prefers-reduced-motion (inclusive o marquee).",
+      "Do usar só fotos e vídeo reais da frota, sempre dentro de moldura com aspect-ratio fixo ou véu, borda hairline e object-fit: cover (contain só para recortes transparentes sobre degradê).",
+      "Do aplicar o padrão de hover completo: lift (-2px/-3px/-4px) + upgrade de sombra + transição .18–.22s, com tudo desligado em prefers-reduced-motion (inclusive marquee, carrossel de slides e autoplay do vídeo).",
       "Do escrever números de prova em Barlow Condensed 800 azul com tabular-nums.",
       "Do manter min-height ≥44px em qualquer alvo de toque e o focus ring azul de 3px."
     ],
     "donts": [
-      "Don't criar dark mode ou painéis escuros chapados — escuro só existe como véu sobre foto real (Dark Veil Rule).",
+      "Don't criar dark mode ou painéis escuros chapados — escuro só existe como véu sobre mídia real (Dark Veil Rule); #0B1116 é backdrop de vídeo, não superfície de UI.",
       "Don't usar #39B5FF sobre fundo claro (não passa AA); sobre branco o azul é sempre #0F77B8.",
-      "Don't colocar texto branco sobre o verde WhatsApp — o texto é #04170C.",
+      "Don't colocar texto branco sobre o verde WhatsApp (texto #04170C) nem sobre o azul-céu (texto #04121D).",
       "Don't usar ícones preenchidos, icon fonts ou ilustrações — só o sprite SVG stroke inline (exceção única: o glifo oficial do WhatsApp, filled).",
       "Don't inventar claims visuais de prova (tempo de chegada, estrelas, depoimentos): a página só dramatiza números e fotos que existem.",
-      "Don't usar sombra dura deslocada nem sombra colorida fora de CTA sólido.",
+      "Don't usar sombra dura deslocada nem sombra colorida fora de CTA sólido ou círculo de ícone azul.",
       "Don't usar .btn-line sobre o véu escuro nem .btn-ghost sobre superfície clara — cada outline pertence ao seu fundo."
     ]
   }

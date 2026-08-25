@@ -132,6 +132,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .rail-plan li .ck{width:26px;height:26px;border-radius:50%;background:rgba(29,168,78,.13);
       display:flex;align-items:center;justify-content:center;flex:none}
     .rail-plan li .ck svg{stroke:var(--ok)}
+    /* kicker do painel (a classe existia no markup sem CSS — defeito apontado pelo DESIGN.md) */
+    .kick{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;
+      font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.9rem;color:var(--brand);margin-bottom:6px}
+    .kick::before{content:"";width:26px;height:2px;background:var(--brand)}
     /* card dividido: dois atalhos com icone (pedido 25/08) no lugar da foto + botoes */
     .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .duo-item{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 18px;
@@ -357,7 +361,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 <header id="inicio"><div class="wrap split">
   <section class="rail rail-sos" aria-label="Socorro imediato">
     <div class="media">
-      <video src="assets/hero-guincho-v2.mp4" poster="assets/frota-cargo-815-frente.jpg" autoplay muted loop playsinline width="1280" height="720"></video>
+      <video src="assets/hero-guincho-v3.mp4" poster="assets/frota-cargo-815-frente.jpg" autoplay muted loop playsinline width="1280" height="720"></video>
     </div>
     <div class="sos-slides">
       <div class="slide">
