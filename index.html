@@ -221,6 +221,11 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .safe-item:hover .ic svg{transform:rotate(-8deg) scale(1.12)}
     .safe-item:hover .ic::after{transform:scale(1.18);background:var(--brand-hi)}
     .safe-item:hover h3{color:var(--brand)}
+    /* reveal ao rolar (pedido 25/08): elementos entram subindo conforme a pagina desce.
+       animation (nao transition) pra nao atropelar os transitions de hover; sem JS nada fica escondido */
+    .rv{opacity:0}
+    .rv.on{opacity:1;animation:rvin .6s cubic-bezier(.2,.7,.3,1) backwards}
+    @keyframes rvin{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
     /* frota */
     .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:48px}
@@ -685,6 +690,21 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 </script>
 
 <script>
+// reveal ao rolar: elementos entram subindo quando aparecem na tela (cascata dentro de cada grupo)
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const alvos = document.querySelectorAll('.card,.safe-item,.gal figure,.duo-item,.cbox,.b2b-card,.sec .title,.sec .lead');
+  const io = new IntersectionObserver(entradas => entradas.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  }), { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+  alvos.forEach(el => {
+    const irmaos = el.parentElement ? [...el.parentElement.children] : [];
+    el.style.animationDelay = (irmaos.length > 1 ? (irmaos.indexOf(el) % 8) * 80 : 0) + 'ms';
+    el.classList.add('rv');
+    io.observe(el);
+  });
+})();
+
 // autoplay bloqueado (economia de bateria/dados) deixa o video pausado com botao de play.
 // 1) forca o play; 2) destrava no primeiro toque; 3) se nao tocar em 4s, vira quadro estatico.
 (() => {
