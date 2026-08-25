@@ -211,8 +211,16 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .safe-item .ic::after{content:"0" counter(etapa);position:absolute;top:-7px;right:-7px;width:24px;height:24px;border-radius:50%;
       background:var(--ink);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.8rem;
       display:flex;align-items:center;justify-content:center}
-    .safe-item h3{font-size:1.4rem;margin-bottom:8px}
+    .safe-item h3{font-size:1.4rem;margin-bottom:8px;transition:color .2s}
     .safe-item p{font-size:.98rem;max-width:34ch}
+    /* hover das etapas (pedido 25/08): circulo levanta, icone inclina, numero pula, titulo acende */
+    .safe-item .ic{transition:transform .25s,box-shadow .25s}
+    .safe-item .ic svg{transition:transform .25s}
+    .safe-item .ic::after{transition:transform .25s,background .25s}
+    .safe-item:hover .ic{transform:translateY(-5px) scale(1.07);box-shadow:0 16px 30px -10px rgba(15,119,184,.6)}
+    .safe-item:hover .ic svg{transform:rotate(-8deg) scale(1.12)}
+    .safe-item:hover .ic::after{transform:scale(1.18);background:var(--brand-hi)}
+    .safe-item:hover h3{color:var(--brand)}
 
     /* frota */
     .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:48px}
@@ -465,7 +473,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <p class="lead">Equipamento certo para cada situação — cada card abre o WhatsApp com a mensagem pronta.</p>
   <div class="cards">
     <article class="card">
-      <div class="ph"><img src="assets/frota-hrv.webp" alt="Honda HR-V amarrada na plataforma da G7" width="1280" height="720" loading="lazy"></div>
+      <div class="ph"><img src="assets/frota-hrv.webp" alt="Honda HR-V amarrada na plataforma da G7" width="1280" height="720" loading="lazy" style="object-position:50% 24%"></div>
       <div class="tx">
         <h3>Carros, motos e SUVs</h3>
         <p>Do popular ao esportivo: plataforma e amarração correta.</p>
