@@ -74,6 +74,15 @@
         ],
         "createdAt": "2026-08-25T00:40:32.524Z",
         "reason": "pull-quote do slogan herdada do v5 (identidade pinada): border-left 3px é convenção de citação do incumbente"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T02:32:58.438Z",
+        "reason": "Gabriel pediu o carrossel de seguradoras nominalmente (25/08); pausa no hover e so anima sob prefers-reduced-motion:no-preference"
       }
     ]
   }

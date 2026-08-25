@@ -1,44 +1,455 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-25T12:00:00-03:00",
+  "generatedAt": "2026-08-25T15:00:00-03:00",
   "title": "Design System: G7 Guinchos",
   "extensions": {
     "colorMeta": {
-      "brand-deep": { "role": "primary", "displayName": "Brand Deep", "canonical": "#0F77B8", "tonalRamp": ["oklch(25% 0.09 240)", "oklch(35% 0.11 240)", "oklch(45% 0.12 240)", "oklch(55% 0.13 240)", "oklch(65% 0.12 240)", "oklch(75% 0.09 240)", "oklch(88% 0.05 240)", "oklch(96% 0.02 240)"] },
-      "brand-sky": { "role": "primary", "displayName": "Brand Sky (logo)", "canonical": "#39B5FF", "tonalRamp": ["oklch(30% 0.10 245)", "oklch(42% 0.13 245)", "oklch(54% 0.15 245)", "oklch(66% 0.15 245)", "oklch(74% 0.14 245)", "oklch(82% 0.10 245)", "oklch(90% 0.06 245)", "oklch(96% 0.02 245)"] },
-      "whatsapp-green": { "role": "secondary", "displayName": "WhatsApp Green", "canonical": "#25D366", "tonalRamp": ["oklch(25% 0.09 150)", "oklch(38% 0.13 150)", "oklch(50% 0.16 150)", "oklch(62% 0.19 150)", "oklch(74% 0.21 150)", "oklch(82% 0.16 150)", "oklch(90% 0.10 150)", "oklch(96% 0.04 150)"] },
-      "online-green": { "role": "secondary", "displayName": "Online Green", "canonical": "#1DA84E", "tonalRamp": ["oklch(22% 0.08 150)", "oklch(34% 0.11 150)", "oklch(46% 0.14 150)", "oklch(58% 0.16 150)", "oklch(66% 0.15 150)", "oklch(78% 0.12 150)", "oklch(88% 0.08 150)", "oklch(96% 0.03 150)"] },
-      "asphalt-ink": { "role": "neutral", "displayName": "Asphalt Ink", "canonical": "#0E1B26", "tonalRamp": ["oklch(15% 0.02 240)", "oklch(25% 0.02 240)", "oklch(38% 0.02 240)", "oklch(52% 0.02 240)", "oklch(66% 0.015 240)", "oklch(80% 0.01 240)", "oklch(90% 0.008 240)", "oklch(96% 0.005 240)"] },
-      "media-night": { "role": "neutral", "displayName": "Media Night", "canonical": "#0B1116", "tonalRamp": ["oklch(14% 0.015 240)", "oklch(22% 0.015 240)", "oklch(34% 0.015 240)", "oklch(48% 0.012 240)", "oklch(62% 0.01 240)", "oklch(76% 0.008 240)", "oklch(88% 0.006 240)", "oklch(95% 0.005 240)"] },
-      "cloud-ground": { "role": "neutral", "displayName": "Cloud Ground", "canonical": "#F5F7FA", "tonalRamp": ["oklch(20% 0.01 240)", "oklch(35% 0.01 240)", "oklch(50% 0.01 240)", "oklch(65% 0.01 240)", "oklch(78% 0.008 240)", "oklch(88% 0.007 240)", "oklch(94% 0.006 240)", "oklch(97% 0.005 240)"] }
+      "brand-deep": {
+        "role": "primary",
+        "displayName": "Brand Deep",
+        "canonical": "#0F77B8",
+        "tonalRamp": [
+          "oklch(25% 0.09 240)",
+          "oklch(35% 0.11 240)",
+          "oklch(45% 0.12 240)",
+          "oklch(55% 0.13 240)",
+          "oklch(65% 0.12 240)",
+          "oklch(75% 0.09 240)",
+          "oklch(88% 0.05 240)",
+          "oklch(96% 0.02 240)"
+        ]
+      },
+      "brand-sky": {
+        "role": "primary",
+        "displayName": "Brand Sky (logo)",
+        "canonical": "#39B5FF",
+        "tonalRamp": [
+          "oklch(30% 0.10 245)",
+          "oklch(42% 0.13 245)",
+          "oklch(54% 0.15 245)",
+          "oklch(66% 0.15 245)",
+          "oklch(74% 0.14 245)",
+          "oklch(82% 0.10 245)",
+          "oklch(90% 0.06 245)",
+          "oklch(96% 0.02 245)"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "secondary",
+        "displayName": "WhatsApp Green",
+        "canonical": "#25D366",
+        "tonalRamp": [
+          "oklch(25% 0.09 150)",
+          "oklch(38% 0.13 150)",
+          "oklch(50% 0.16 150)",
+          "oklch(62% 0.19 150)",
+          "oklch(74% 0.21 150)",
+          "oklch(82% 0.16 150)",
+          "oklch(90% 0.10 150)",
+          "oklch(96% 0.04 150)"
+        ]
+      },
+      "online-green": {
+        "role": "secondary",
+        "displayName": "Online Green",
+        "canonical": "#1DA84E",
+        "tonalRamp": [
+          "oklch(22% 0.08 150)",
+          "oklch(34% 0.11 150)",
+          "oklch(46% 0.14 150)",
+          "oklch(58% 0.16 150)",
+          "oklch(66% 0.15 150)",
+          "oklch(78% 0.12 150)",
+          "oklch(88% 0.08 150)",
+          "oklch(96% 0.03 150)"
+        ]
+      },
+      "asphalt-ink": {
+        "role": "neutral",
+        "displayName": "Asphalt Ink",
+        "canonical": "#0E1B26",
+        "tonalRamp": [
+          "oklch(15% 0.02 240)",
+          "oklch(25% 0.02 240)",
+          "oklch(38% 0.02 240)",
+          "oklch(52% 0.02 240)",
+          "oklch(66% 0.015 240)",
+          "oklch(80% 0.01 240)",
+          "oklch(90% 0.008 240)",
+          "oklch(96% 0.005 240)"
+        ]
+      },
+      "media-night": {
+        "role": "neutral",
+        "displayName": "Media Night",
+        "canonical": "#0B1116",
+        "tonalRamp": [
+          "oklch(14% 0.015 240)",
+          "oklch(22% 0.015 240)",
+          "oklch(34% 0.015 240)",
+          "oklch(48% 0.012 240)",
+          "oklch(62% 0.01 240)",
+          "oklch(76% 0.008 240)",
+          "oklch(88% 0.006 240)",
+          "oklch(95% 0.005 240)"
+        ]
+      },
+      "cloud-ground": {
+        "role": "neutral",
+        "displayName": "Cloud Ground",
+        "canonical": "#F5F7FA",
+        "tonalRamp": [
+          "oklch(20% 0.01 240)",
+          "oklch(35% 0.01 240)",
+          "oklch(50% 0.01 240)",
+          "oklch(65% 0.01 240)",
+          "oklch(78% 0.008 240)",
+          "oklch(88% 0.007 240)",
+          "oklch(94% 0.006 240)",
+          "oklch(97% 0.005 240)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "H1 e slides .hx do trilho de emergência, branco sobre o véu com text-shadow 0 2px 30px rgba(0,0,0,.55); máx. 14ch." },
-      "headline": { "displayName": "Headline", "purpose": "Títulos de seção, sempre com um trecho em <em> azul sem itálico; o h2 do trilho de agendamento é a versão contida (clamp(1.6rem,2.6vw,2.05rem))." },
-      "title": { "displayName": "Title", "purpose": "Títulos de card e item (1.22rem duo/contato, 1.4rem serviço, 1.5rem b2b); mesma fôrma condensada caps 800." },
-      "body": { "displayName": "Body", "purpose": "Barlow 17px/1.65 (16px mobile); leads 1.08rem máx. 62ch; micro-corpo .88–.98rem em cards e listas." },
-      "label": { "displayName": "Label", "purpose": "Caps condensadas com tracking positivo: wordmark .17em, rótulo do marquee .14em/.8rem, nomes do marquee .12em, chips B2B .1em." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "H1 e slides .hx do trilho de emergência, branco sobre o véu com text-shadow 0 2px 30px rgba(0,0,0,.55); máx. 14ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção, sempre com um trecho em <em> azul sem itálico; o h2 do trilho de agendamento é a versão contida (clamp(1.6rem,2.6vw,2.05rem))."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de card e item (1.22rem duo/contato, 1.4rem serviço, 1.5rem b2b); mesma fôrma condensada caps 800."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Barlow 17px/1.65 (16px mobile); leads 1.08rem máx. 62ch; micro-corpo .88–.98rem em cards e listas."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Caps condensadas com tracking positivo: wordmark .17em, rótulo do marquee .14em/.8rem, nomes do marquee .12em, chips B2B .1em."
+      }
     },
     "shadows": [
-      { "name": "shadow-1", "value": "0 1px 2px rgba(14,27,38,.05), 0 4px 14px -8px rgba(14,27,38,.10)", "purpose": "Cards, caixas e o marquee em repouso; sempre acompanhada de borda hairline de 1px." },
-      { "name": "shadow-2", "value": "0 4px 10px rgba(14,27,38,.06), 0 22px 40px -22px rgba(14,27,38,.28)", "purpose": "Rails do hero, foto de about, e estado hover de cards e duo-items." },
-      { "name": "cta-glow-wa", "value": "0 10px 24px -12px rgba(37,211,102,.55)", "purpose": "Glow verde exclusivo de botões WhatsApp sólidos (FAB: 0 12px 30px rgba(37,211,102,.4))." },
-      { "name": "cta-glow-brand", "value": "0 10px 24px -12px rgba(15,119,184,.5)", "purpose": "Glow azul de botões azuis sólidos; círculos de ícone usam 0 8px 18px -8px rgba(15,119,184,.6)." },
-      { "name": "text-veil", "value": "text-shadow: 0 2px 30px rgba(0,0,0,.55)", "purpose": "Exclusivo dos títulos brancos sobre o vídeo do hero — profundidade difusa, nunca outline ou sombra dura." },
-      { "name": "pulse-ring", "value": "0 0 0 4px rgba(29,168,78,.18)", "purpose": "Anel do dot 'online', animado 2.4s ease-in-out; reservado no CSS (desligado em reduced-motion)." }
+      {
+        "name": "shadow-1",
+        "value": "0 1px 2px rgba(14,27,38,.05), 0 4px 14px -8px rgba(14,27,38,.10)",
+        "purpose": "Cards, caixas e o marquee em repouso; sempre acompanhada de borda hairline de 1px."
+      },
+      {
+        "name": "shadow-2",
+        "value": "0 4px 10px rgba(14,27,38,.06), 0 22px 40px -22px rgba(14,27,38,.28)",
+        "purpose": "Rails do hero, foto de about, e estado hover de cards e duo-items."
+      },
+      {
+        "name": "cta-glow-wa",
+        "value": "0 10px 24px -12px rgba(37,211,102,.55)",
+        "purpose": "Glow verde exclusivo de botões WhatsApp sólidos (FAB: 0 12px 30px rgba(37,211,102,.4))."
+      },
+      {
+        "name": "cta-glow-brand",
+        "value": "0 10px 24px -12px rgba(15,119,184,.5)",
+        "purpose": "Glow azul de botões azuis sólidos; círculos de ícone usam 0 8px 18px -8px rgba(15,119,184,.6)."
+      },
+      {
+        "name": "text-veil",
+        "value": "text-shadow: 0 2px 30px rgba(0,0,0,.55)",
+        "purpose": "Exclusivo dos títulos brancos sobre o vídeo do hero — profundidade difusa, nunca outline ou sombra dura."
+      },
+      {
+        "name": "pulse-ring",
+        "value": "0 0 0 4px rgba(29,168,78,.18)",
+        "purpose": "Anel do dot 'online', animado 2.4s ease-in-out; reservado no CSS (desligado em reduced-motion)."
+      }
     ],
     "motion": [
-      { "name": "state-fast", "value": "0.18s", "purpose": "FAB e micro-estados (cor, fundo)." },
-      { "name": "state-standard", "value": "0.2s–0.22s", "purpose": "Botões, cards, bordas, lift de hover." },
-      { "name": "photo-zoom", "value": "transform 0.35s ease", "purpose": "Zoom 1.05 de fotos emolduradas no hover do card." },
-      { "name": "sos-slides", "value": "keyframe fade 18s infinite, delays 6s/12s", "purpose": "Carrossel CSS-only de 3 mensagens do hero em fade; reduced-motion mostra só a primeira." },
-      { "name": "marquee-loop", "value": "translateX(-50%) 30s linear infinite", "purpose": "Loop CSS-only do marquee de parceiros; pausa no hover, desligado em reduced-motion." }
+      {
+        "name": "state-fast",
+        "value": "0.18s",
+        "purpose": "FAB e micro-estados (cor, fundo)."
+      },
+      {
+        "name": "state-standard",
+        "value": "0.2s–0.22s",
+        "purpose": "Botões, cards, bordas, lift de hover."
+      },
+      {
+        "name": "photo-zoom",
+        "value": "transform 0.35s ease",
+        "purpose": "Zoom 1.05 de fotos emolduradas no hover do card."
+      },
+      {
+        "name": "sos-slides",
+        "value": "keyframe fade 18s infinite, delays 6s/12s",
+        "purpose": "Carrossel CSS-only de 3 mensagens do hero em fade; reduced-motion mostra só a primeira."
+      },
+      {
+        "name": "marquee-loop",
+        "value": "translateX(-50%) 30s linear infinite",
+        "purpose": "Loop CSS-only do marquee de parceiros; pausa no hover, desligado em reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "cards-2col", "value": "1100px" },
-      { "name": "stack", "value": "980px" },
-      { "name": "mobile-dock", "value": "820px" },
-      { "name": "narrow", "value": "400px" }
+      {
+        "name": "cards-2col",
+        "value": "1100px"
+      },
+      {
+        "name": "stack",
+        "value": "980px"
+      },
+      {
+        "name": "mobile-dock",
+        "value": "820px"
+      },
+      {
+        "name": "narrow",
+        "value": "400px"
+      }
+    ],
+    "typeScale": [
+      {
+        "value": "17px",
+        "where": "body desktop"
+      },
+      {
+        "value": "16px",
+        "where": "body ≤820px"
+      },
+      {
+        "value": "1rem",
+        "where": "links do menu, .desc do rail de agendamento"
+      },
+      {
+        "value": "1.02rem",
+        "where": "botões (.btn), chips B2B, dock mobile"
+      },
+      {
+        "value": "1.04rem",
+        "where": "wordmark da navbar"
+      },
+      {
+        "value": "1.08rem",
+        "where": "leads (.lead) e nomes no marquee (.mq-tx)"
+      },
+      {
+        "value": "1.22rem",
+        "where": "título do duo-item e das caixas de contato (.cbox h3)"
+      },
+      {
+        "value": "1.4rem",
+        "where": "títulos de card de serviço e de etapa (.card h3, .safe-item h3)"
+      },
+      {
+        "value": "1.5rem",
+        "where": "título do b2b-card e citação (.quote)"
+      },
+      {
+        "value": ".8rem",
+        "where": "rótulo do marquee (.mq-label) e badge numerado das etapas"
+      },
+      {
+        "value": ".88rem",
+        "where": "small do duo-item e do bloco B2B"
+      },
+      {
+        "value": ".9rem",
+        "where": "tag sobre foto (.shot .tag); também no .kick, elemento não canonizado"
+      },
+      {
+        "value": ".92rem",
+        "where": "footer"
+      },
+      {
+        "value": ".94rem",
+        "where": "rótulo da célula de estatística (.stat span)"
+      },
+      {
+        "value": ".95rem",
+        "where": "corpo de card, figcaption da galeria, .mail do b2b-card, .cbox p"
+      },
+      {
+        "value": ".97rem",
+        "where": "checklist do rail de agendamento (.rail-plan li)"
+      },
+      {
+        "value": ".98rem",
+        "where": "parágrafo de etapa (.safe-item p) e lista do b2b-card"
+      },
+      {
+        "value": "2.1rem",
+        "where": "número de estatística ≤400px"
+      },
+      {
+        "value": "2.6rem",
+        "where": "número de estatística (.stat b)"
+      },
+      {
+        "value": ".34em",
+        "where": "selo 24h (.h24), relativo ao h1"
+      },
+      {
+        "value": "clamp(2.4rem,4.6vw,3.7rem)",
+        "where": "display do hero (h1/.hx)"
+      },
+      {
+        "value": "clamp(2rem,4.4vw,3.1rem)",
+        "where": "títulos de seção (.title)"
+      },
+      {
+        "value": "clamp(2rem,3.4vw,2.9rem)",
+        "where": "telefone gigante (.num)"
+      },
+      {
+        "value": "clamp(1.6rem,2.6vw,2.05rem)",
+        "where": "h2 do rail de agendamento"
+      }
+    ],
+    "radiusScale": [
+      {
+        "value": "6px",
+        "where": "focus-visible global"
+      },
+      {
+        "value": "8px",
+        "where": "polegar da scrollbar"
+      },
+      {
+        "value": "9px",
+        "where": "tag sobre foto (.shot .tag)"
+      },
+      {
+        "value": "10px",
+        "where": "botões e chips B2B"
+      },
+      {
+        "value": "11px",
+        "where": "caixa de ícone de contato (.cbox .ic)"
+      },
+      {
+        "value": "12px",
+        "where": "duo-item"
+      },
+      {
+        "value": "14px",
+        "where": "--r: cards, marquee, galeria, b2b-card, shot, cbox"
+      },
+      {
+        "value": "18px",
+        "where": "rails do hero"
+      },
+      {
+        "value": "999px",
+        "where": "selo-pill 24h"
+      },
+      {
+        "value": "50%",
+        "where": "círculos: dot, checkmark .ck, círculos de ícone, badge de etapa, FAB"
+      }
+    ],
+    "colorLiterals": [
+      {
+        "value": "#0C639A",
+        "where": "hover de botão azul sólido (brand-pressed)"
+      },
+      {
+        "value": "#04170C",
+        "where": "texto sobre verde WhatsApp (.btn-wa, .d-wa, fill do FAB)"
+      },
+      {
+        "value": "#04121D",
+        "where": "texto do selo 24h sobre #39B5FF (sky-ink)"
+      },
+      {
+        "value": "#0B1116",
+        "where": "backdrop do painel de vídeo (media-night)"
+      },
+      {
+        "value": "#FFFFFF",
+        "where": "texto sobre azul e sobre o véu (#fff); superfícies (--surface)"
+      },
+      {
+        "value": "rgba(255,255,255,.88)",
+        "where": "fundo da navbar sticky (com blur 14px)"
+      },
+      {
+        "value": "rgba(255,255,255,.9)",
+        "where": "fundo da tag sobre foto (com blur 6px)"
+      },
+      {
+        "value": "rgba(255,255,255,.10)",
+        "where": "fundo do botão ghost"
+      },
+      {
+        "value": "rgba(255,255,255,.2)",
+        "where": "fundo do botão ghost em hover"
+      },
+      {
+        "value": "rgba(255,255,255,.45)",
+        "where": "borda do botão ghost"
+      },
+      {
+        "value": "rgba(8,14,19,.5)",
+        "where": "topo do gradiente do véu do hero"
+      },
+      {
+        "value": "rgba(8,14,19,.24)",
+        "where": "meio do gradiente do véu (40%)"
+      },
+      {
+        "value": "rgba(8,14,19,.78)",
+        "where": "base do véu e gradiente das figcaptions da galeria"
+      },
+      {
+        "value": "rgba(0,0,0,.55)",
+        "where": "text-shadow 0 2px 30px dos títulos sobre o vídeo"
+      },
+      {
+        "value": "rgba(15,119,184,.03)",
+        "where": "fim do gradiente da seção Segurança"
+      },
+      {
+        "value": "rgba(15,119,184,.4)",
+        "where": "borda hover de card e cbox"
+      },
+      {
+        "value": "rgba(15,119,184,.45)",
+        "where": "borda hover do duo-item"
+      },
+      {
+        "value": "rgba(15,119,184,.5)",
+        "where": "glow do botão azul"
+      },
+      {
+        "value": "rgba(15,119,184,.6)",
+        "where": "glow dos círculos de ícone (0 8px 18px -8px)"
+      },
+      {
+        "value": "rgba(37,211,102,.55)",
+        "where": "glow do botão WhatsApp"
+      },
+      {
+        "value": "rgba(37,211,102,.4)",
+        "where": "glow do FAB"
+      },
+      {
+        "value": "rgba(29,168,78,.13)",
+        "where": "círculo do checkmark (.ck)"
+      },
+      {
+        "value": "rgba(29,168,78,.18)",
+        "where": "anel do dot online (--ok-glow)"
+      },
+      {
+        "value": "rgba(29,168,78,.06)",
+        "where": "fase expandida do keyframe pulse"
+      },
+      {
+        "value": "rgba(29,168,78,.08)",
+        "where": "--ok-tint declarado no :root (reservado, sem uso no markup)"
+      }
     ]
   },
   "components": [
@@ -134,13 +545,41 @@
       "Hover levanta (-2px botões, -3px/-4px cards) e nada mais; reduced-motion desliga toda animação — marquee, carrossel de slides e o autoplay do vídeo."
     ],
     "rules": [
-      { "name": "The Two Voices Rule", "body": "Verde é ação e presença (WhatsApp, online, confirmação); azul é marca e estrutura (navegação, agendamento, informação). Um CTA verde promete conversa imediata; um CTA azul promete processo. Nunca usar verde decorativamente nem azul num botão de WhatsApp.", "section": "colors" },
-      { "name": "The One Ink Rule", "body": "Não existem cinzas soltos: todo texto, linha e sombra deriva de #0E1B26 puro ou em alfa. Neutro novo = alfa novo da mesma tinta.", "section": "colors" },
-      { "name": "The Dark Veil Rule", "body": "Superfície escura só existe como mídia real sob véu: vídeo/foto com filter brightness(.48) contrast(1.15) saturate(.65), backdrop #0B1116 e gradiente rgba(8,14,19,.5→.24→.78). Não há dark mode nem painéis escuros chapados.", "section": "colors" },
-      { "name": "The Condensed Caps Rule", "body": "Todo h1/h2/h3 é Barlow Condensed 800, uppercase, letter-spacing -0.02em, line-height 1.02. Título fora dessa fôrma não é deste mundo.", "section": "typography" },
-      { "name": "The Blue Em Rule", "body": "O destaque de um título é <em> com cor #0F77B8 (ou #39B5FF sobre escuro) e font-style: normal — cor no lugar de itálico, um trecho por título.", "section": "typography" },
-      { "name": "The Border-And-Shadow Rule", "body": "Superfície elevada = borda hairline de 1px + sombra da escala; nunca só uma das duas.", "section": "elevation" },
-      { "name": "The Colored Glow Rule", "body": "Sombra colorida pertence exclusivamente a CTAs sólidos e círculos de ícone azuis, e carrega a cor da própria superfície em glow difuso com spread negativo — nunca sombra dura deslocada, nunca em cards.", "section": "elevation" }
+      {
+        "name": "The Two Voices Rule",
+        "body": "Verde é ação e presença (WhatsApp, online, confirmação); azul é marca e estrutura (navegação, agendamento, informação). Um CTA verde promete conversa imediata; um CTA azul promete processo. Nunca usar verde decorativamente nem azul num botão de WhatsApp.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ink Rule",
+        "body": "Não existem cinzas soltos: todo texto, linha e sombra deriva de #0E1B26 puro ou em alfa. Neutro novo = alfa novo da mesma tinta.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Veil Rule",
+        "body": "Superfície escura só existe como mídia real sob véu: vídeo/foto com filter brightness(.48) contrast(1.15) saturate(.65), backdrop #0B1116 e gradiente rgba(8,14,19,.5→.24→.78). Não há dark mode nem painéis escuros chapados.",
+        "section": "colors"
+      },
+      {
+        "name": "The Condensed Caps Rule",
+        "body": "Todo h1/h2/h3 é Barlow Condensed 800, uppercase, letter-spacing -0.02em, line-height 1.02. Título fora dessa fôrma não é deste mundo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Blue Em Rule",
+        "body": "O destaque de um título é <em> com cor #0F77B8 (ou #39B5FF sobre escuro) e font-style: normal — cor no lugar de itálico, um trecho por título.",
+        "section": "typography"
+      },
+      {
+        "name": "The Border-And-Shadow Rule",
+        "body": "Superfície elevada = borda hairline de 1px + sombra da escala; nunca só uma das duas.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Colored Glow Rule",
+        "body": "Sombra colorida pertence exclusivamente a CTAs sólidos e círculos de ícone azuis, e carrega a cor da própria superfície em glow difuso com spread negativo — nunca sombra dura deslocada, nunca em cards.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do manter todo contato a um toque em qualquer ponto: navbar com WhatsApp, FAB/dock, tel: e wa links por seção — CTAs verdes para \"agora\", azuis para \"processo\".",
