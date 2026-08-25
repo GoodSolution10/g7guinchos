@@ -90,9 +90,12 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
       border:1px solid var(--line);box-shadow:var(--shadow-2)}
     /* trilho emergência: foto real + véu escuro, ação verde */
     .rail-sos{isolation:isolate;color:#fff;min-height:470px;justify-content:flex-end;padding:30px 34px}
-    .rail-sos .media{position:absolute;inset:0;z-index:-2}
-    .rail-sos .media img{width:100%;height:100%;object-fit:cover;object-position:22% 60%;
-      filter:brightness(.48) contrast(1.15) saturate(.65)}
+    /* fundo acompanha o carrossel: 3 fotos empilhadas, mesmo fade/timing das mensagens (pedido 25/08) */
+    .rail-sos .media{position:absolute;inset:0;z-index:-2;background:#0B1116}
+    .rail-sos .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;
+      filter:brightness(.48) contrast(1.15) saturate(.65);opacity:0}
+    .rail-sos .media img:first-child{object-position:22% 60%}
+    .rail-sos .media img:nth-child(3){object-position:50% 68%}
     .rail-sos::before{content:"";position:absolute;inset:0;z-index:-1;
       background:linear-gradient(180deg,rgba(8,14,19,.5) 0%,rgba(8,14,19,.24) 40%,rgba(8,14,19,.78) 100%)}
     /* 24h como expoente do "sai agora" (pedido 24/08: "como se fosse elevado") */
@@ -108,14 +111,14 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .sos-slides{display:grid}
     .sos-slides .slide{grid-area:1/1;opacity:0}
     @media (prefers-reduced-motion:no-preference){
-      .sos-slides .slide{animation:sosfade 18s infinite}
-      .sos-slides .slide:nth-child(2){animation-delay:6s}
-      .sos-slides .slide:nth-child(3){animation-delay:12s}
+      .sos-slides .slide,.rail-sos .media img{animation:sosfade 18s infinite}
+      .sos-slides .slide:nth-child(2),.rail-sos .media img:nth-child(2){animation-delay:6s}
+      .sos-slides .slide:nth-child(3),.rail-sos .media img:nth-child(3){animation-delay:12s}
       @keyframes sosfade{0%{opacity:0}2%,31%{opacity:1}36%,100%{opacity:0}}
     }
     @media (prefers-reduced-motion:reduce){
-      .sos-slides .slide{display:none}
-      .sos-slides .slide:first-child{display:block;opacity:1}
+      .sos-slides .slide,.rail-sos .media img{display:none}
+      .sos-slides .slide:first-child,.rail-sos .media img:first-child{display:block;opacity:1}
     }
     .rail-sos .num{display:inline-block;font-family:'Barlow Condensed';font-weight:800;
       font-size:clamp(2rem,3.4vw,2.9rem);letter-spacing:-.01em;line-height:1;color:#fff;margin-bottom:18px}
@@ -147,6 +150,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .mq::before,.mq::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:1;pointer-events:none}
     .mq::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
     .mq::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+    .mq-label{text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+      letter-spacing:.14em;font-size:.8rem;color:var(--muted-2);padding:0 16px 10px}
     .mq-track{display:flex;width:max-content}
     .mq-grp{display:flex;align-items:center;gap:56px;flex:none;padding-right:56px}
     @media (prefers-reduced-motion:no-preference){.mq-track{animation:mq 30s linear infinite}}
@@ -349,7 +354,11 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 
 <header id="inicio"><div class="wrap split">
   <section class="rail rail-sos" aria-label="Socorro imediato">
-    <div class="media"><img src="assets/frota-cargo-815.webp" alt="" width="1600" height="900" fetchpriority="high"></div>
+    <div class="media">
+      <img src="assets/frota-cargo-815.webp" alt="" width="1600" height="900" fetchpriority="high">
+      <img src="assets/frota-duplo-fiesta.webp" alt="" width="1600" height="900">
+      <img src="assets/frota-hero.webp" alt="" width="1600" height="1200">
+    </div>
     <div class="sos-slides">
       <div class="slide">
         <h1>Quebrou? A G7 <em style="color:var(--brand-hi);font-style:normal">sai agora</em><sup class="h24">24 horas</sup></h1>
@@ -402,6 +411,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </section>
 
   <div class="mq" aria-label="Seguradoras e assistências que a G7 atende">
+    <p class="mq-label">Prestamos serviço para estas companhias</p>
     <div class="mq-track">
       <div class="mq-grp">
         <img src="assets/logo-loovi.svg" alt="Loovi" width="122" height="19">
