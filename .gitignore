@@ -13,3 +13,19 @@ node_modules/
 .playwright-mcp/
 # png de site liberado em assets/
 !assets/*.png
+
+# artefatos de trabalho do design (screenshots de revisão/decisão): fora do repo
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/hook.cache.json
+
+# ID do grupo do WhatsApp: fica fora do repo publico
+agente/.grupo
+# .planilha: URL do web app do Apps Script (com o token). Fica FORA do git.
+agente/.planilha
+agente/.csv-token
+agente/.base
+agente/.planilha-url
+
+# runtime da pagina de decisao do impeccable
+.impeccable/questions/

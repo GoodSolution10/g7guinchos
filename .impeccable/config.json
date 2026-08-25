@@ -1,0 +1,80 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "variacao-porte.html"
+        ],
+        "createdAt": "2026-08-25T00:22:24.134Z",
+        "reason": "identidade v5 pinada pelo usuário (24/08): sombras coloridas com offset nos CTAs WhatsApp/brand são o estilo incumbente do site"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "variacao-linha.html"
+        ],
+        "createdAt": "2026-08-25T00:26:10.642Z",
+        "reason": "identidade v5 pinada pelo usuário (24/08): sombras coloridas com offset nos CTAs WhatsApp/brand são o estilo incumbente"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "variacao-caminhos.html"
+        ],
+        "createdAt": "2026-08-25T00:26:10.716Z",
+        "reason": "identidade v5 pinada pelo usuário (24/08): sombras coloridas com offset nos CTAs WhatsApp/brand são o estilo incumbente"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "variacao-porte.html"
+        ],
+        "createdAt": "2026-08-25T00:33:08.718Z",
+        "reason": "pull-quote do slogan herdada do v5 (identidade pinada pelo usuário 24/08): border-left de 3px é a convenção tipográfica de citação do site incumbente, não acento de card"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "variacao-linha.html"
+        ],
+        "createdAt": "2026-08-25T00:33:08.789Z",
+        "reason": "pull-quote do slogan herdada do v5 (identidade pinada pelo usuário 24/08): border-left de 3px é a convenção tipográfica de citação do site incumbente, não acento de card"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "variacao-caminhos.html"
+        ],
+        "createdAt": "2026-08-25T00:33:08.859Z",
+        "reason": "pull-quote do slogan herdada do v5 (identidade pinada pelo usuário 24/08): border-left de 3px é a convenção tipográfica de citação do site incumbente, não acento de card"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T00:40:32.444Z",
+        "reason": "identidade v5 pinada pelo usuário (24/08): sombras coloridas com offset nos CTAs são o estilo incumbente"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-25T00:40:32.524Z",
+        "reason": "pull-quote do slogan herdada do v5 (identidade pinada): border-left 3px é convenção de citação do incumbente"
+      }
+    ]
+  }
+}

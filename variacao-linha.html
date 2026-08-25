@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <!--
-THESIS: a primeira dobra se divide em dois trilhos — "preciso de socorro AGORA" (verde,
-WhatsApp/ligar) e "quero agendar / sou empresa" (azul, calmo) — cada visitante entra pelo
-próprio caso; recusa o hero único que obriga o desesperado e a seguradora a lerem o mesmo texto.
-OWN-WORLD: light #F5F7FA, azul profundo #0F77B8 + azul G7, verde de ação; Barlow Condensed
-caps; fotos 100% reais. O trilho agendado é deliberadamente mais quieto que a emergência.
-STORY: quebrei agora → o painel verde me pega em 2 segundos; sou leilão/seguradora → o
-trilho azul me leva ao comercial sem atravessar o socorro.
-FIRST VIEWPORT: split 50/50 no desktop (emergência esquerda com número gigante, agendado
-direita), emergência primeiro e inteira no mobile; faixa de números fecha a dobra.
-FORM: estrutura 1 da lista ordenada (sorteada pelo roll); seed 89eb293d.
+THESIS: o site conta o percurso do chamado de ponta a ponta — você chama, a G7 sai,
+checklist na origem, transporte amarrado, entrega com assinatura e foto; a documentação
+(diferencial que nenhum concorrente mostra) vira a ESTRUTURA da página, não uma seção.
+OWN-WORLD: light #F5F7FA, azul profundo #0F77B8 + azul G7, verde de status; Barlow
+Condensed caps, fotos 100% reais da frota; linha vertical contínua costurando as etapas.
+STORY: cheguei quebrado → o passo 01 já é o botão → vejo que existe processo sério
+(120/dia, seguradoras confiam) → chamo sem medo.
+FIRST VIEWPORT: hero foto real escurecida + WhatsApp, com a etapa 01 "Você chama"
+ancorada no rodapé da dobra puxando a linha do tempo.
+FORM: estrutura 5 da lista ordenada (sorteada pelo roll); seed 89eb293d.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review,
 the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 -->
@@ -18,7 +18,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>G7 Guinchos — Guincho 24 horas em São Paulo | +120 reboques por dia</title>
-  <meta name="description" content="Guincho 24 horas em São Paulo. Socorro imediato pelo WhatsApp ou transporte agendado para empresas e seguradoras. Mais de 120 reboques por dia.">
+  <meta name="description" content="Guincho 24 horas em São Paulo. Do chamado à entrega documentada com foto: mais de 120 reboques por dia, frota própria, parceira de seguradoras.">
   <meta name="theme-color" content="#F5F7FA">
   <link rel="icon" href="assets/icone-g7.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +28,9 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     :root{
       --bg:#F5F7FA; --surface:#FFFFFF; --surface-2:#EDF1F6;
       --line:rgba(14,27,38,.10); --line-strong:rgba(14,27,38,.20);
-      --ink:#0E1B26; --muted:rgba(14,27,38,.74); --muted-2:rgba(14,27,38,.68);
+      --ink:#0E1B26; --muted:rgba(14,27,38,.74); --muted-2:rgba(14,27,38,.55);
       --brand:#0F77B8; --brand-hi:#39B5FF; --brand-tint:rgba(15,119,184,.08); --brand-tint-2:rgba(15,119,184,.16);
-      --ok:#1DA84E; --ok-glow:rgba(29,168,78,.18); --ok-tint:rgba(29,168,78,.08);
+      --ok:#1DA84E; --ok-glow:rgba(29,168,78,.18);
       --wa:#25D366; --wa-hover:#1EB456;
       --shadow-1:0 1px 2px rgba(14,27,38,.05),0 4px 14px -8px rgba(14,27,38,.10);
       --shadow-2:0 4px 10px rgba(14,27,38,.06),0 22px 40px -22px rgba(14,27,38,.28);
@@ -39,10 +39,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     }
     *{margin:0;padding:0;box-sizing:border-box}
     [hidden]{display:none!important}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--brand) var(--surface-2)}
-    ::-webkit-scrollbar{width:12px}
-    ::-webkit-scrollbar-track{background:var(--surface-2)}
-    ::-webkit-scrollbar-thumb{background:var(--brand);border-radius:8px;border:3px solid var(--surface-2)}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
     body{font-family:'Barlow',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--muted);font-size:17px;line-height:1.65;overflow-x:hidden}
     h1,h2,h3,.disp{font-family:'Barlow Condensed',system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;color:var(--ink);font-weight:800}
@@ -62,14 +59,17 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .btn-wa:hover{background:var(--wa-hover)}
     .btn-brand{background:var(--brand);color:#fff;box-shadow:0 10px 24px -12px rgba(15,119,184,.5)}
     .btn-brand:hover{background:#0C639A}
-    .btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--line-strong)}
-    .btn-line:hover{background:var(--surface);border-color:var(--ink)}
     .btn-ghost{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(4px)}
     .btn-ghost:hover{background:rgba(255,255,255,.2);border-color:#fff}
 
+    .alert{background:var(--surface);border-bottom:1px solid var(--line);font-size:.92rem}
+    .alert .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;flex-wrap:wrap}
+    .alert .live{display:inline-flex;align-items:center;gap:9px;color:var(--muted)}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px var(--ok-glow);flex:none}
     @media (prefers-reduced-motion:no-preference){.dot{animation:pulse 2.4s ease-in-out infinite}}
     @keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--ok-glow)}50%{box-shadow:0 0 0 7px rgba(29,168,78,.06)}}
+    .alert a{color:var(--ink);font-weight:700;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+    .alert a:hover{color:var(--brand)}
 
     .navbar{position:sticky;top:0;z-index:var(--z-nav);background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
@@ -82,102 +82,76 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:var(--brand);transition:right .22s}
     .menu a:hover{color:var(--ink)}
     .menu a:hover::after{right:0}
-    /* nav sem telefone por decisão do Gabriel (24/08): número gigante já vive no hero */
 
-    /* ---------- split hero: dois caminhos ---------- */
-    .split{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;padding:30px 0 0;align-items:stretch}
-    .rail{border-radius:18px;overflow:hidden;position:relative;display:flex;flex-direction:column;
-      border:1px solid var(--line);box-shadow:var(--shadow-2)}
-    /* trilho emergência: foto real + véu escuro, ação verde */
-    .rail-sos{isolation:isolate;color:#fff;min-height:470px;justify-content:flex-end;padding:30px 34px}
-    .rail-sos .media{position:absolute;inset:0;z-index:-2}
-    .rail-sos .media img{width:100%;height:100%;object-fit:cover;object-position:22% 60%;
-      filter:brightness(.48) contrast(1.15) saturate(.65)}
-    .rail-sos::before{content:"";position:absolute;inset:0;z-index:-1;
-      background:linear-gradient(180deg,rgba(8,14,19,.5) 0%,rgba(8,14,19,.24) 40%,rgba(8,14,19,.78) 100%)}
-    /* 24h como expoente do "sai agora" (pedido 24/08: "como se fosse elevado") */
-    .h24{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.34em;line-height:1;
-      letter-spacing:.06em;text-transform:uppercase;vertical-align:super;margin-left:10px;
-      padding:6px 12px;border-radius:999px;background:var(--brand-hi);color:#04121D;
-      display:inline-block;transform:translateY(-.25em)}
-    .rail-sos h1{color:#fff;font-size:clamp(2.4rem,4.6vw,3.7rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.55)}
-    .rail-sos p{margin:12px 0 22px;max-width:40ch;opacity:.92}
-    .rail-sos .num{display:inline-block;font-family:'Barlow Condensed';font-weight:800;
-      font-size:clamp(2rem,3.4vw,2.9rem);letter-spacing:-.01em;line-height:1;color:#fff;margin-bottom:18px}
-    .rail-sos .num:hover{color:var(--brand-hi)}
-    .rail-sos .ctas{display:flex;gap:12px;flex-wrap:wrap}
-    /* trilho agendado: quieto, superfície clara */
-    .rail-plan{background:var(--surface);padding:28px 30px;justify-content:space-between;gap:16px}
-    .rail-plan h2{font-size:clamp(1.6rem,2.6vw,2.05rem);max-width:22ch}
-    .rail-plan .desc{margin:10px 0 0;max-width:42ch;font-size:1rem}
-    .rail-plan ul{list-style:none;display:grid;gap:11px;margin:20px 0}
-    .rail-plan li{display:flex;gap:11px;align-items:flex-start;color:var(--ink);font-size:.97rem}
-    .rail-plan li svg{flex:none;margin-top:4px;stroke:var(--ok)}
-    .rail-plan .ph{border-radius:11px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/5;background:var(--surface-2)}
-    .rail-plan .ph img{width:100%;height:100%;object-fit:cover}
-    .rail-plan .ctas{display:flex;gap:12px;flex-wrap:wrap}
+    /* ---------- hero foto + âncora da etapa 01 ---------- */
+    .hero{position:relative;isolation:isolate;min-height:clamp(540px,78vh,720px);display:flex;align-items:flex-end;padding:110px 0 96px}
+    .hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 68%;
+      filter:brightness(.5) contrast(1.18) saturate(.62)}
+    .hero-media::after{content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(78% 62% at 52% 42%,transparent 38%,rgba(4,9,13,.66) 100%),
+        linear-gradient(212deg,rgba(57,181,255,.14) 0%,transparent 52%)}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(180deg,rgba(8,14,19,.62) 0%,rgba(8,14,19,.18) 34%,rgba(8,14,19,.72) 100%)}
+    .hero h1{font-size:clamp(2.7rem,7vw,5rem);max-width:16ch;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55)}
+    .hero h1 em{color:var(--brand-hi);font-style:normal}
+    .hero .sub{font-size:clamp(1.05rem,2.2vw,1.26rem);color:#fff;opacity:.9;max-width:52ch;margin:20px 0 30px}
+    .hero-ctas{display:flex;gap:13px;flex-wrap:wrap}
 
-    /* carrossel de prestadoras dentro do hero (pedido 24/08) */
-    .mq{grid-column:1/-1;position:relative;overflow:hidden;background:var(--surface);
-      border:1px solid var(--line);border-radius:14px;padding:13px 0;box-shadow:var(--shadow-1)}
-    .mq::before,.mq::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:1;pointer-events:none}
-    .mq::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
-    .mq::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
-    .mq-track{display:flex;width:max-content}
-    .mq-grp{display:flex;align-items:center;gap:56px;flex:none;padding-right:56px}
-    @media (prefers-reduced-motion:no-preference){.mq-track{animation:mq 30s linear infinite}}
-    .mq:hover .mq-track{animation-play-state:paused}
-    @keyframes mq{to{transform:translateX(-50%)}}
-    .mq-grp img{height:26px;width:auto;flex:none}
-    .mq-grp img.sq{height:38px}   /* marcas quadradas precisam de mais altura pra mesma massa visual */
-    .mq-grp .mq-tx{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
-      letter-spacing:.12em;font-size:1.08rem;color:var(--ink);white-space:nowrap;flex:none}
-    @media (max-width:820px){.mq-grp{gap:30px;padding-right:30px}.mq-grp img{height:22px}.mq-grp img.sq{height:32px}}
+    /* a etapa 01 ancora na base do hero e puxa a linha */
+    .step-zero{position:relative;margin-top:-52px;z-index:2}
+    .step-zero .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+      box-shadow:var(--shadow-2);padding:26px 30px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .step-zero .n{font-family:'Barlow Condensed';font-weight:800;font-size:2.6rem;color:var(--brand);line-height:1;flex:none}
+    .step-zero h2{font-size:1.6rem;margin-bottom:4px}
+    .step-zero p{font-size:.98rem;max-width:44ch}
+    .step-zero .btn{margin-left:auto}
 
-    /* faixa de números */
-    .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);margin-top:44px}
-    .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);padding:0}
-    .stat{background:var(--surface);padding:28px 22px;text-align:center;transition:background .2s}
-    .stat:hover{background:var(--brand-tint)}
-    .stat b{display:block;font-family:'Barlow Condensed';font-weight:800;font-size:2.6rem;color:var(--brand);line-height:1;font-variant-numeric:tabular-nums}
-    .stat span{font-size:.94rem;color:var(--muted-2);display:block;margin-top:5px}
-
+    /* ---------- linha do tempo ---------- */
     .sec{padding:92px 0}
     .title{font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:14px}
     .title em{color:var(--brand);font-style:normal}
     .lead{color:var(--muted);max-width:62ch;font-size:1.08rem}
 
-    /* serviços com foto */
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
-      display:flex;flex-direction:column;box-shadow:var(--shadow-1);
-      transition:border-color .22s,box-shadow .22s,transform .22s}
-    .card:hover{border-color:rgba(15,119,184,.4);box-shadow:var(--shadow-2);transform:translateY(-4px)}
-    .card .ph{aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
-    .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
-    .card:hover .ph img{transform:scale(1.05)}
-    .card .tx{padding:20px;display:flex;flex-direction:column;flex:1}
-    .card h3{font-size:1.4rem;margin-bottom:6px}
-    .card p{font-size:.95rem;margin-bottom:16px}
-    .card .go{margin-top:auto;color:var(--brand);font-weight:700;display:inline-flex;align-items:center;gap:9px;min-height:44px}
-    .card .go svg{transition:transform .2s}
-    .card:hover .go svg{transform:translateX(4px)}
+    .tl{position:relative;margin-top:56px;display:grid;gap:56px}
+    .tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--brand-tint-2);transform:translateX(-50%)}
+    .tstep{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative}
+    .tstep .n{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+      width:56px;height:56px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;
+      font-family:'Barlow Condensed';font-weight:800;font-size:1.3rem;border:5px solid var(--bg);box-shadow:var(--shadow-1)}
+    .tstep .ph{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;
+      background:var(--surface-2);box-shadow:var(--shadow-2)}
+    .tstep .ph img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .tstep:hover .ph img{transform:scale(1.04)}
+    .tstep .tx h3{font-size:1.8rem;margin-bottom:8px}
+    .tstep .tx p{font-size:1.02rem;max-width:44ch}
+    .tstep:nth-child(even) .ph{order:2}
+    .tstep:nth-child(even) .tx{order:1;text-align:right;justify-self:end}
+    .tstep:nth-child(even) .tx p{margin-left:auto}
+    .tl-end{position:relative;text-align:center;padding-top:8px}
+    .tl-end .btn{min-width:280px}
 
-    /* segurança */
-    .safe-bg{background:linear-gradient(180deg,var(--brand-tint) 0%,rgba(15,119,184,.03) 100%);
-      border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    /* origem→transporte→entrega como fluxo conectado: a sequência carrega informação, números ganhos */
-    .safe{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:54px;counter-reset:etapa}
-    .safe-item{position:relative;counter-increment:etapa}
-    .safe-item+.safe-item::before{content:"";position:absolute;top:27px;left:-40px;width:40px;height:2px;background:var(--brand-tint-2)}
-    .safe-item .ic{position:relative;width:56px;height:56px;border-radius:50%;background:var(--brand);display:flex;align-items:center;
-      justify-content:center;margin-bottom:18px;box-shadow:0 8px 18px -8px rgba(15,119,184,.6)}
-    .safe-item .ic svg{stroke:#fff}
-    .safe-item .ic::after{content:"0" counter(etapa);position:absolute;top:-7px;right:-7px;width:24px;height:24px;border-radius:50%;
-      background:var(--ink);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.8rem;
+    /* faixa de números */
+    .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+    .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);padding:0}
+    .stat{background:var(--surface);padding:28px 22px;text-align:center;transition:background .2s}
+    .stat:hover{background:var(--brand-tint)}
+    .stat b{display:block;font-family:'Barlow Condensed';font-weight:800;font-size:2.6rem;color:var(--brand);line-height:1}
+    .stat span{font-size:.94rem;color:var(--muted-2);display:block;margin-top:5px}
+
+    /* serviços compactos */
+    .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+    .svc a{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;
+      display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow-1);
+      transition:border-color .22s,box-shadow .22s,transform .22s}
+    .svc a:hover{border-color:rgba(15,119,184,.4);box-shadow:var(--shadow-2);transform:translateY(-4px)}
+    .svc .ic{width:46px;height:46px;border-radius:11px;background:var(--brand-tint);border:1px solid var(--brand-tint-2);
       display:flex;align-items:center;justify-content:center}
-    .safe-item h3{font-size:1.4rem;margin-bottom:8px}
-    .safe-item p{font-size:.98rem;max-width:34ch}
+    .svc .ic svg{stroke:var(--brand)}
+    .svc h3{font-size:1.3rem}
+    .svc p{font-size:.93rem}
+    .svc b{color:var(--brand);font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;margin-top:auto;min-height:32px}
 
     /* frota */
     .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:48px}
@@ -193,13 +167,10 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .b2b-bg{background:var(--surface);border-top:1px solid var(--line)}
     .b2b{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
     .chips-b2b{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 8px}
-    .chips-b2b span{display:inline-flex;align-items:center;min-height:52px;
-      font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
-      letter-spacing:.1em;font-size:1.02rem;color:var(--ink);background:#fff;
-      border:1px solid var(--line-strong);border-radius:10px;padding:10px 20px;transition:border-color .2s,color .2s}
+    .chips-b2b span{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+      letter-spacing:.1em;font-size:1.02rem;color:var(--ink);background:var(--bg);
+      border:1px solid var(--line-strong);border-radius:10px;padding:10px 18px;transition:border-color .2s,color .2s}
     .chips-b2b span:hover{border-color:var(--brand);color:var(--brand)}
-    .chips-b2b img{height:24px;width:auto;display:block}
-    .chips-b2b img.sq{height:32px}
     .b2b small{display:block;color:var(--muted-2);font-size:.88rem;margin-bottom:24px}
     .b2b-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--shadow-1)}
     .b2b-card h3{font-size:1.5rem;margin-bottom:14px}
@@ -252,26 +223,29 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     .dock .d-wa{background:var(--wa);color:#04170C}
 
     @media (max-width:1100px){
-      .cards{grid-template-columns:repeat(2,1fr)}
+      .svc{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:980px){
-      .split{grid-template-columns:1fr}
-      .rail-sos{min-height:440px;order:1}
-      .mq{order:2}          /* no celular o carrossel cola no painel de emergência */
-      .rail-plan{order:3}
       .about .wrap,.b2b{grid-template-columns:1fr;gap:34px}
-      .safe{grid-template-columns:1fr;gap:30px}
-      .safe-item+.safe-item::before{left:27px;top:-30px;width:2px;height:30px}
       .stats .wrap{grid-template-columns:repeat(2,1fr)}
+      /* timeline vira coluna única com a linha à esquerda */
+      .tl::before{left:27px}
+      .tstep{grid-template-columns:1fr;gap:18px;padding-left:72px}
+      .tstep .n{left:27px;top:0;transform:translate(-50%,0)}
+      .tstep:nth-child(even) .ph{order:1}
+      .tstep:nth-child(even) .tx{order:2;text-align:left;justify-self:start}
+      .tstep:nth-child(even) .tx p{margin-left:0}
+      .tl-end{text-align:left;padding-left:72px}
     }
     @media (max-width:820px){
       .menu{display:none}
       body{font-size:16px}
       .sec{padding:66px 0}
-      .split{padding-top:22px}
-      .rail-sos,.rail-plan{padding:26px}
-      .rail-sos .ctas .btn{flex:1 1 100%}
-      .cards{grid-template-columns:1fr}
+      .hero{min-height:auto;padding:96px 0 84px}
+      .hero-media img{object-position:64% 50%}
+      .hero-ctas .btn{flex:1 1 100%}
+      .svc{grid-template-columns:1fr}
+      .step-zero .btn{margin-left:0;width:100%}
       .dock{display:grid}
       .fab{display:none}
       footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
@@ -377,15 +351,24 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
   <symbol id="i-cam" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
-  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></symbol>
+  <symbol id="i-truck-h" viewBox="0 0 24 24"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
 </svg>
+
+<div class="alert"><div class="wrap">
+  <span class="live"><span class="dot" aria-hidden="true"></span> Atendemos agora · +120 reboques por dia · São Paulo e região</span>
+  <a href="tel:+5511951251014">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tel"/></svg>
+    Emergência 24h: (11) 95125-1014
+  </a>
+</div></div>
 
 <nav class="navbar"><div class="wrap nav-in">
   <a class="brand" href="#inicio" aria-label="G7 Guinchos — início">
@@ -393,8 +376,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     <span class="wordmark">Guinchos</span>
   </a>
   <div class="menu">
+    <a href="#como-funciona">Como funciona</a>
     <a href="#servicos">Serviços</a>
-    <a href="#seguranca">Segurança</a>
     <a href="#frota">Frota</a>
     <a href="#seguradoras">Seguradoras</a>
     <a href="#contatos">Contatos</a>
@@ -405,13 +388,12 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   </a>
 </div></nav>
 
-<header id="inicio"><div class="wrap split">
-  <section class="rail rail-sos" aria-label="Socorro imediato">
-    <div class="media"><img src="assets/frota-cargo-815.webp" alt="" width="1600" height="900" fetchpriority="high"></div>
-    <h1>Quebrou? A G7 <em style="color:var(--brand-hi);font-style:normal">sai agora</em><sup class="h24">24 horas</sup></h1>
-    <p>Guincho em São Paulo e região — madrugada, feriado ou domingo, atendemos agora.</p>
-    <a class="num" href="tel:+5511951251014">(11) 95125-1014</a>
-    <div class="ctas">
+<header class="hero" id="inicio">
+  <div class="hero-media"><img src="assets/frota-hero.webp" alt="" width="1600" height="1200" fetchpriority="high"></div>
+  <div class="wrap">
+    <h1>Guincho <em>24 horas</em> em São Paulo</h1>
+    <p class="sub">Mais de 120 reboques por dia, do carro de todo dia ao caminhão pesado — e cada um deles com checklist, amarração certa e entrega documentada com foto.</p>
+    <div class="hero-ctas">
       <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
         <svg width="21" height="21" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
         Chamar guincho agora
@@ -421,49 +403,68 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
         Ligar agora
       </a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <section class="rail rail-plan" aria-label="Transporte agendado e empresas">
+<div class="wrap step-zero" id="como-funciona">
+  <div class="box">
+    <span class="n">01</span>
     <div>
-      <h2>Agendar transporte ou operação de frota</h2>
-      <p class="desc">Leilão, oficina, transferência de pátio, seguradora ou assistência — com data marcada e entrega documentada.</p>
-      <ul>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> +120 reboques por dia de capacidade</li>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Leves e pesados, frota própria</li>
-        <li><svg width="18" height="18" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg> Checklist e entrega com assinatura e foto</li>
-      </ul>
+      <h2>Você chama</h2>
+      <p>WhatsApp ou ligação, a qualquer hora — inclusive de madrugada. Daqui pra frente, cada passo é documentado.</p>
     </div>
-    <div class="ph"><img src="assets/frota-duplo-evoque.webp" alt="Reboque duplo da G7: Range Rover Evoque na plataforma e Cruze engatado" width="1600" height="900"></div>
-    <div class="ctas">
-      <a class="btn btn-brand" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
-        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg>
-        Agendar transporte
-      </a>
-      <a class="btn btn-line" href="#seguradoras">Sou seguradora / empresa</a>
-    </div>
-  </section>
+    <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+      <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+      Começar agora
+    </a>
+  </div>
+</div>
 
-  <div class="mq" aria-label="Seguradoras e assistências que a G7 atende">
-    <div class="mq-track">
-      <div class="mq-grp">
-        <img src="assets/logo-loovi.svg" alt="Loovi" width="122" height="19">
-        <img src="assets/logo-porto.svg" alt="Porto Seguro" width="140" height="32">
-        <img src="assets/logo-hdi.png" class="sq" alt="HDI Seguros" width="690" height="430">
-        <img src="assets/logo-bradesco.svg" alt="Bradesco" width="123" height="23">
-        <img src="assets/logo-itau.svg" class="sq" alt="Itaú" width="500" height="500">
-        <span class="mq-tx">Maxpar</span>
+<section class="sec"><div class="wrap">
+  <h2 class="title">Do chamado à entrega, <em>tudo documentado</em></h2>
+  <p class="lead">É assim que os mais de 120 reboques diários da G7 acontecem — o mesmo processo para o carro popular e para a Ferrari.</p>
+
+  <div class="tl">
+    <div class="tstep">
+      <div class="ph"><img src="assets/frota-cargo-815.webp" alt="Plataforma inclinada do Ford Cargo 815 pronta para embarque" width="1600" height="900" loading="lazy"></div>
+      <span class="n" aria-hidden="true">02</span>
+      <div class="tx">
+        <h3>A G7 sai até você</h3>
+        <p>Você diz onde está e o que aconteceu. Sai o guincho certo pro seu caso — plataforma pra leves, guincho pesado pra caminhão.</p>
       </div>
-      <div class="mq-grp" aria-hidden="true">
-        <img src="assets/logo-loovi.svg" alt="" width="122" height="19">
-        <img src="assets/logo-porto.svg" alt="" width="140" height="32">
-        <img src="assets/logo-hdi.png" class="sq" alt="" width="690" height="430">
-        <img src="assets/logo-bradesco.svg" alt="" width="123" height="23">
-        <img src="assets/logo-itau.svg" class="sq" alt="" width="500" height="500">
-        <span class="mq-tx">Maxpar</span>
+    </div>
+    <div class="tstep">
+      <div class="ph"><img src="assets/frota-hrv.webp" alt="Honda HR-V amarrada na plataforma com checklist feito" width="1280" height="720" loading="lazy"></div>
+      <span class="n" aria-hidden="true">03</span>
+      <div class="tx">
+        <h3>Checklist na origem</h3>
+        <p>Antes de embarcar, o estado do veículo é registrado. Amarração adequada ao tipo de veículo — sem surpresa no destino.</p>
+      </div>
+    </div>
+    <div class="tstep">
+      <div class="ph"><img src="assets/frota-duplo-evoque.webp" alt="Range Rover Evoque na plataforma da G7 e Cruze engatado" width="1600" height="900" loading="lazy"></div>
+      <span class="n" aria-hidden="true">04</span>
+      <div class="tx">
+        <h3>Transporte em segurança</h3>
+        <p>Motorista experiente, veículo amarrado certo, trajeto direto ao destino combinado.</p>
+      </div>
+    </div>
+    <div class="tstep">
+      <div class="ph"><img src="assets/frota-ferrari-458.webp" alt="Ferrari 458 entregue pela G7 na plataforma" width="716" height="716" loading="lazy"></div>
+      <span class="n" aria-hidden="true">05</span>
+      <div class="tx">
+        <h3>Entrega com assinatura e foto</h3>
+        <p>Finalização com assinatura do responsável e registro em foto. Você sabe como saiu — e prova como chegou.</p>
       </div>
     </div>
   </div>
-</div></header>
+  <div class="tl-end" style="margin-top:56px">
+    <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento." target="_blank" rel="noopener">
+      <svg width="21" height="21" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+      Chamar a G7 agora
+    </a>
+  </div>
+</div></section>
 
 <div class="stats"><div class="wrap">
   <div class="stat"><b>+120</b><span>reboques por dia</span></div>
@@ -474,92 +475,50 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 
 <section class="sec" id="servicos"><div class="wrap">
   <h2 class="title">O que a G7 <em>resolve por você</em></h2>
-  <p class="lead">Equipamento certo para cada situação — cada card abre o WhatsApp com a mensagem pronta.</p>
-  <div class="cards">
-    <article class="card">
-      <div class="ph"><img src="assets/frota-hrv.webp" alt="Honda HR-V amarrada na plataforma da G7" width="1280" height="720" loading="lazy"></div>
-      <div class="tx">
-        <h3>Carros, motos e SUVs</h3>
-        <p>Do popular ao esportivo: plataforma e amarração correta.</p>
-        <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20para%20ve%C3%ADculo%20leve." target="_blank" rel="noopener">Solicitar
-          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ph"><img src="assets/frota-cavalos.webp" alt="Dois cavalos mecânicos removidos pela G7" width="1280" height="720" loading="lazy"></div>
-      <div class="tx">
-        <h3>Caminhões e máquinas</h3>
-        <p>Cavalo mecânico, caminhão ou equipamento — guincho pesado próprio.</p>
-        <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20para%20ve%C3%ADculo%20pesado." target="_blank" rel="noopener">Solicitar
-          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ph"><img src="assets/frota-cargo-815.webp" alt="Plataforma inclinada do Ford Cargo 815" width="1600" height="900" loading="lazy"></div>
-      <div class="tx">
-        <h3>Socorro 24h</h3>
-        <p>Emergência não escolhe hora — tem gente da G7 pronta pra sair.</p>
-        <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento%20de%20emerg%C3%AAncia." target="_blank" rel="noopener">Chamar agora
-          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ph"><img src="assets/frota-duplo-fiesta.webp" alt="Reboque duplo: carro na plataforma e van engatada" width="1280" height="720" loading="lazy"></div>
-      <div class="tx">
-        <h3>Reboque agendado</h3>
-        <p>Leilão, oficina, pátio ou mudança — com data e hora marcadas.</p>
-        <a class="go" href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">Agendar
-          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
+  <p class="lead">Equipamento certo para cada situação — toque no seu caso e o WhatsApp já abre com a mensagem pronta.</p>
+  <div class="svc">
+    <a href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20para%20ve%C3%ADculo%20leve." target="_blank" rel="noopener">
+      <span class="ic"><svg width="23" height="23" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-truck"/></svg></span>
+      <h3>Carros, motos e SUVs</h3>
+      <p>Plataforma e amarração correta, do popular ao esportivo.</p>
+      <b>Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></b>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20guincho%20para%20ve%C3%ADculo%20pesado." target="_blank" rel="noopener">
+      <span class="ic"><svg width="23" height="23" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-truck-h"/></svg></span>
+      <h3>Caminhões e máquinas</h3>
+      <p>Cavalo mecânico, caminhão, barco ou equipamento — guincho pesado próprio.</p>
+      <b>Solicitar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></b>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Preciso%20de%20atendimento%20de%20emerg%C3%AAncia." target="_blank" rel="noopener">
+      <span class="ic"><svg width="23" height="23" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"/></svg></span>
+      <h3>Socorro 24h</h3>
+      <p>Madrugada, feriado ou domingo — tem gente da G7 pronta pra sair.</p>
+      <b>Chamar agora <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></b>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=5511951251014&amp;text=Quero%20agendar%20um%20reboque." target="_blank" rel="noopener">
+      <span class="ic"><svg width="23" height="23" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cal"/></svg></span>
+      <h3>Reboque agendado</h3>
+      <p>Leilão, oficina, pátio ou mudança — com data e hora marcadas.</p>
+      <b>Agendar <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow"/></svg></b>
+    </a>
   </div>
 </div></section>
 
-<section class="sec safe-bg" id="seguranca"><div class="wrap">
-  <h2 class="title">Seu veículo protegido <em>do início ao fim</em></h2>
-  <p class="lead">Todo transporte da G7 é documentado — você sabe exatamente como o veículo saiu e como chegou.</p>
-  <div class="safe">
-    <div class="safe-item">
-      <div class="ic"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-list"/></svg></div>
-      <h3>Checklist na origem</h3>
-      <p>Antes de embarcar, o estado do veículo é registrado em checklist — sem surpresa no destino.</p>
-    </div>
-    <div class="safe-item">
-      <div class="ic"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg></div>
-      <h3>Transporte amarrado certo</h3>
-      <p>Plataforma e amarração adequadas ao tipo de veículo — do carro de passeio ao esportivo de luxo.</p>
-    </div>
-    <div class="safe-item">
-      <div class="ic"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cam"/></svg></div>
-      <h3>Entrega com assinatura e foto</h3>
-      <p>Finalização com assinatura do responsável e registro em foto — tudo documentado para a sua segurança.</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="sec" id="frota"><div class="wrap">
+<section class="sec" id="frota" style="padding-top:0"><div class="wrap">
   <h2 class="title">Frota própria: <em>do básico ao esportivo</em></h2>
   <p class="lead">Mais de 10 veículos próprios — e o cuidado que já transportou Ferrari.</p>
   <div class="gal">
     <figure>
-      <img src="assets/frota-ferrari-458.webp" alt="Ferrari 458 vermelha na plataforma da G7" width="716" height="716" loading="lazy">
-      <figcaption>Ferrari 458 — esportivos</figcaption>
-    </figure>
-    <figure>
       <img src="assets/frota-ferrari-360.webp" alt="Ferrari 360 amarela na plataforma da G7" width="1657" height="931" loading="lazy">
-      <figcaption>Ferrari 360</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/frota-duplo-evoque.webp" alt="Range Rover Evoque na plataforma e Cruze engatado" width="1600" height="900" loading="lazy">
-      <figcaption>Reboque duplo</figcaption>
+      <figcaption>Ferrari 360 — esportivos</figcaption>
     </figure>
     <figure>
       <img src="assets/frota-cavalos.webp" alt="Dois cavalos mecânicos removidos pela G7" width="1280" height="720" loading="lazy">
       <figcaption>Remoção de pesados</figcaption>
     </figure>
     <figure>
-      <img src="assets/frota-hrv.webp" alt="Honda HR-V na plataforma da G7" width="1280" height="720" loading="lazy">
-      <figcaption>Plataforma para leves</figcaption>
+      <img src="assets/frota-duplo-fiesta.webp" alt="Reboque duplo: carro na plataforma e van engatada" width="1280" height="720" loading="lazy">
+      <figcaption>Reboque duplo</figcaption>
     </figure>
     <figure>
       <img src="assets/frota.webp" alt="Frota da G7 Guinchos reunida" width="1280" height="960" loading="lazy">
@@ -573,15 +532,8 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
     <div>
       <h2 class="title">Parceira de seguradoras <em>e assistências</em></h2>
       <p class="lead">A G7 atende acionamentos de seguradoras e empresas de assistência 24 horas — com capacidade real de mais de 120 reboques por dia em São Paulo e região.</p>
-      <!-- logos oficiais: loovi.com.br e portoseguro.com.br (24/08/2026); HDI/Bradesco/Itaú via Wikimedia Commons (24/08/2026) -->
       <div class="chips-b2b">
-        <span><img src="assets/logo-loovi.svg" alt="Loovi" width="122" height="19"></span>
-        <span><img src="assets/logo-porto.svg" alt="Porto Seguro" width="140" height="32"></span>
-        <span><img src="assets/logo-hdi.png" class="sq" alt="HDI Seguros" width="690" height="430"></span>
-        <span><img src="assets/logo-bradesco.svg" alt="Bradesco" width="123" height="23"></span>
-        <span><img src="assets/logo-itau.svg" class="sq" alt="Itaú" width="500" height="500"></span>
-        <span>Maxpar</span>
-        <span>+ assistências 24h</span>
+        <span>Loovi</span><span>Porto Seguro</span><span>HBI</span><span>+ assistências 24h</span>
       </div>
       <small>Lista parcial de operações atendidas.</small>
     </div>
@@ -876,7 +828,7 @@ the verdict, DESIGN.md, and every shipping raster carrying its provenance.
   "@type":"AutomotiveBusiness",
   "name":"G7 Guinchos",
   "slogan":"Te atender é a nossa missão",
-  "description":"Guincho 24 horas em São Paulo e região. Socorro imediato e transporte agendado para empresas e seguradoras. Mais de 120 reboques por dia.",
+  "description":"Guincho 24 horas em São Paulo e região. Mais de 120 reboques por dia. Remoção de carros, motos, barcos e veículos pesados com entrega documentada.",
   "url":"https://g7guinchos.com",
   "image":"assets/frota-hero.webp",
   "email":"g7guinchosadm@gmail.com",
